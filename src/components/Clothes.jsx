@@ -15,7 +15,6 @@ import styles from "../css/Clothes.module.css";  // Use this to import styles
 function ClothesComponent({clothes}){
     return (
         <ul>
-
         </ul>
     )
 }
