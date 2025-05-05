@@ -1,0 +1,32 @@
+/* This will be the main wrapper */
+.page-container {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    min-height: 100vh;  /* Ensure container takes at least full viewport height */
+    position: relative; /* Allow absolute positioning inside it */
+}
+
+.content {
+    flex: 1;  /* Take up all available space */
+}
+
+.navbar {
+    background-color: black !important;
+    padding: 10px 0;
+    width: 100%;
+    position: absolute; /* Position the navbar absolutely within the container */
+    bottom: 0;          /* Stick it to the bottom */
+    z-index: 1000;      /* Ensure it stays above other content */
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: space-around;  /* Space out the icons evenly */
+    align-items: center;  /* Vertically center the icons */
+    width: 100%;
+}
+
+.nav-icon {
+    width: 24px;  /* Adjust the icon size */
+    height: 24px;
+}

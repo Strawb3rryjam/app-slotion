@@ -1,0 +1,19 @@
+.navbar {
+    background-color: black;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+  }
+  
+  .navbar-links {
+    display: flex;
+    justify-content: space-around; /* Evenly space out the icons */
+    align-items: center; /* Vertically center the icons */
+    width: 100%;
+  }
+  
+  .nav-icon {
+    width: 24px;  /* Adjust icon size */
+    height: 24px;
+  }
+  

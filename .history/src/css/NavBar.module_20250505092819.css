@@ -1,0 +1,24 @@
+.navbar {
+    background-color: green;
+    padding: 10px 0;
+    width: 393px; 
+    position: absolute;  
+    bottom: 16px;        
+    left: 0;           
+    display: flex;
+    justify-content: flex-start; 
+  }
+  
+  .navbar-links {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;       
+  }
+  
+  .nav-icon {
+    width: 24px;  /* Adjust icon size */
+    height: 24px;
+    margin-left: 10px; 
+    gap: 40px;
+  }
+  

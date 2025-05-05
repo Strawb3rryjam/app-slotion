@@ -1,0 +1,23 @@
+.navbar {
+    background-color: green;
+    padding: 10px 0;
+    width: 425px; /* Width of your navbar */
+    position: absolute;  /* Keep navbar fixed at the bottom of the body */
+    bottom: 0;           /* Position it at the bottom of the screen */
+    left: 0;             /* Align it to the left */
+    display: flex;
+    justify-content: flex-start; /* Align content to the left inside the navbar */
+  }
+  
+  .navbar-links {
+    display: flex;
+    justify-content: space-around; /* Evenly space out the icons */
+    align-items: center; /* Vertically center the icons */
+    width: 100%;
+  }
+  
+  .nav-icon {
+    width: 24px;  /* Adjust icon size */
+    height: 24px;
+  }
+  

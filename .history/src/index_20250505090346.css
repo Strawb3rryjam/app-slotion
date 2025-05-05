@@ -1,0 +1,21 @@
+:root {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+body{
+  width: 393px;
+  min-height: 852px;
+  padding: 16px;
+  margin: 0 auto;
+  background-color: #F5F3EF;
+}
+
+
+html {
+  height: 100%;
+  display: flex;
+  align-items: center;       /* vertical center */
+  justify-content: center;   /* horizontal center */
+  background-color: #9b7373; /* this is the background around your app */
+}
+

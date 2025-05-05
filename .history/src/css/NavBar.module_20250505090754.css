@@ -1,0 +1,22 @@
+.navbar {
+    background-color: black !important;
+    position: fixed;  /* Fix the navbar to the bottom of the screen */
+    bottom: 0;        /* Position it at the bottom */
+    width: 100%;      /* Make it stretch across the full width of the screen */
+    padding: 10px 0;  /* Add some padding for better spacing */
+    z-index: 1000;    /* Ensure the navbar is above other content */
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: space-around;  /* Space out the links evenly */
+    align-items: center;  /* Vertically center the items */
+    width: 100%;  /* Ensure the links container takes up full width */
+}
+
+.nav-icon {
+    width: 24px;  /* You can adjust the icon size as needed */
+    height: 24px; /* Adjust to match width */
+}
+
+/* Additional styling for links and icons as necessary */

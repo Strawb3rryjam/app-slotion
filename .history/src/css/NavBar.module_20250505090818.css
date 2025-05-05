@@ -1,0 +1,28 @@
+/* The main container that wraps the content and the navbar */
+.page-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    min-height: 100vh;  /* Ensure the container takes up at least the full height of the viewport */
+}
+
+.content {
+    flex: 1;  /* This makes the content take up all available space */
+}
+
+.navbar {
+    background-color: black !important;
+    padding: 10px 0;  /* Space above and below the icons */
+    width: 100%;      /* Full width of the screen */
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: space-around;  /* Evenly space out the icons */
+    align-items: center;  /* Vertically center the icons */
+    width: 100%;  /* Ensure the links container takes up full width */
+}
+
+.nav-icon {
+    width: 24px;  /* Adjust the icon size */
+    height: 24px; /* Adjust to match width */
+}

@@ -6,8 +6,7 @@ body {
   width: 393px;
   min-height: 852px; /* Ensure the body has a minimum height */
   padding: 16px;
-  margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 10px;
   background-color: #F5F3EF;
   position: relative;  
 

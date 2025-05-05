@@ -1,0 +1,30 @@
+.page-container {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    min-height: 100%;  /* Take at least full viewport height */
+    position: relative; /* Ensure that navbar stays below content */
+}
+
+.content {
+    flex: 1;  /* Take all available space above navbar */
+}
+
+.navbar {
+    background-color: black !important;
+    padding: 10px 0;
+    width: 100%;
+    position: relative;  /* Now part of the normal flow */
+    bottom: 0;           /* Ensure it's below content */
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: space-around;  /* Evenly space out the icons */
+    align-items: center;  /* Vertically center the icons */
+    width: 100%;
+}
+
+.nav-icon {
+    width: 24px;  /* Adjust icon size */
+    height: 24px;
+}

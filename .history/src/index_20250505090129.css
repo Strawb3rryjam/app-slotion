@@ -1,0 +1,30 @@
+:root {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+body{
+  width: 393px;
+  min-height: 852px;
+  padding: 16px;
+  margin: 0 auto;
+  background-color: #F5F3EF;
+}
+
+
+html {
+  height: 100%;
+  display: flex;
+  align-items: center;       /* vertical center */
+  justify-content: center;   /* horizontal center */
+  background-color: #DADADA; /* this is the background around your app */
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  }
+}
