@@ -14,6 +14,9 @@ import ClosetButton from "../components/closetPageButton";
 
 function NavBar() {
     return (
+
+        <ClosetButton /> {/* Include the ClosetButton component here */}
+
         <nav className={styles.navbar}> {/* Use styles.navbar for CSS modules */}
             <div className={styles["navbar-links"]}> {/* Use styles for other classes */}
                 <Link to="/" className={styles.Home}>

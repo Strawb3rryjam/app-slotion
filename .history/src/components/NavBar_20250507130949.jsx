@@ -23,6 +23,7 @@ function NavBar() {
                     <img src={searchIcon} alt="Search" className={styles["nav-icon"]} />
                 </Link>
 
+                <ClosetButton /> {/* Include the ClosetButton component here */}
 
 
                 <Link to="/Tips" className={styles.Tips}>
@@ -31,7 +32,6 @@ function NavBar() {
                 <Link to="/Profile" className={styles.Profile}>
                     <img src={profileIcon} alt="Profile" className={styles["nav-icon"]} />
                 </Link>
-
 
             </div>
         </nav>

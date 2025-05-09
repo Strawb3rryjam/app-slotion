@@ -32,6 +32,7 @@ function NavBar() {
                     <img src={profileIcon} alt="Profile" className={styles["nav-icon"]} />
                 </Link>
 
+                <ClosetButton /> {/* Include the ClosetButton component here */}
 
             </div>
         </nav>

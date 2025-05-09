@@ -5,10 +5,10 @@
 body {
   width: 393px;
   min-height: 852px; 
+  padding: 16px;
   margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  
+  margin-top: 50px;
+  margin-bottom: 50px;
   background-color: #F5F3EF;
   position: relative;  
 

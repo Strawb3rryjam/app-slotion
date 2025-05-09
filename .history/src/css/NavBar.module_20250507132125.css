@@ -1,11 +1,10 @@
 .navbar {
     background-color: white;
-    padding-top: 19px ;
+    padding: 10px 0;
     width: 393px; 
     position: absolute;  
     bottom: 16px;        
     left: 0;           
-    display: flex;
     justify-content: center;  /* Align the navbar content centrally */
 }
   
@@ -29,12 +28,4 @@
     height: 31px;
   }
 
-  .Tips{
-    width: 32px;
-    height: 32px;
-  }
 
-.Profile{
-  width: 32px;
-  height: 32px;
-}

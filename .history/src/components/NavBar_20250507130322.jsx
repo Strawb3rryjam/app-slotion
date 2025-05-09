@@ -9,7 +9,7 @@ import tipsIcon from "../assets/leaf.svg";
 import profileIcon from "../assets/Profile.svg";
 
 /*component*/
-import ClosetButton from "../components/closetPageButton";
+import closetIcon from "../components/closetPageButton";
 
 
 function NavBar() {
@@ -23,8 +23,6 @@ function NavBar() {
                     <img src={searchIcon} alt="Search" className={styles["nav-icon"]} />
                 </Link>
 
-
-
                 <Link to="/Tips" className={styles.Tips}>
                     <img src={tipsIcon} alt="Tips" className={styles["nav-icon"]} />
                 </Link>
@@ -32,6 +30,7 @@ function NavBar() {
                     <img src={profileIcon} alt="Profile" className={styles["nav-icon"]} />
                 </Link>
 
+                <closetIcon /> {/* This will render the closet button component */}
 
             </div>
         </nav>

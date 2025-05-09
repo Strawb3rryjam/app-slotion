@@ -8,7 +8,7 @@ import FinalNav from './components/finalNav.jsx'
 function App() {
   return (
     <div>
-      <FinalNav />
+      <NavBar />
       <main className = "main-content">
         <Routes>
           <Route path = "/" element = {<Home />} />

@@ -2,13 +2,13 @@ import './App.css'
 import Home from './pages/Home'
 import Closet from './pages/Closet'
 import {Routes, Route} from 'react-router-dom'
-import FinalNav from './components/finalNav.jsx'
+import NavBar from './components/NavBar'
 
 
 function App() {
   return (
     <div>
-      <FinalNav />
+      <NavBar />
       <main className = "main-content">
         <Routes>
           <Route path = "/" element = {<Home />} />

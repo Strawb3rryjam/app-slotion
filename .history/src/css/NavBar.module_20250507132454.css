@@ -1,12 +1,11 @@
 .navbar {
-    background-color: white;
-    padding-top: 19px ;
-    width: 393px; 
-    position: absolute;  
-    bottom: 16px;        
-    left: 0;           
-    display: flex;
-    justify-content: center;  /* Align the navbar content centrally */
+  width: 393px;
+  padding: 16px;
+  margin: 0 auto;
+  margin-top: 50px;
+  
+  background-color: #F5F3EF;
+  position: relative;  
 }
   
 .navbar-links {

@@ -14,7 +14,10 @@ import ClosetButton from "../components/closetPageButton";
 
 function NavBar() {
     return (
-        <nav className={styles.navbar}> {/* Use styles.navbar for CSS modules */}
+        <div>
+                    <ClosetButton /> {/* Include the ClosetButton component here */}
+
+nav className={styles.navbar}> {/* Use styles.navbar for CSS modules */}
             <div className={styles["navbar-links"]}> {/* Use styles for other classes */}
                 <Link to="/" className={styles.Home}>
                     <img src={homeIcon} alt="Home" className={styles["nav-icon"]} />
@@ -35,6 +38,9 @@ function NavBar() {
 
             </div>
         </nav>
+        </div>
+
+        
     );
 }
 

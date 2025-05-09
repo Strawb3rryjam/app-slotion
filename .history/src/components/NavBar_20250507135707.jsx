@@ -32,7 +32,6 @@ function NavBar() {
                     <img src={profileIcon} alt="Profile" className={styles["nav-icon"]} />
                 </Link>
 
-
             </div>
         </nav>
     );
