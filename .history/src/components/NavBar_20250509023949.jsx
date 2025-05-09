@@ -16,21 +16,23 @@ import ClosetButton from "../components/closetPageButton";
 function NavBar() {
     return (
         <nav className={styles.navbar}> {/* Use styles.navbar for CSS modules */}
-            <div className={styles["navbar-links"]}> {/* Use styles for other classes */}
+            <div>
                 <Link to="/" className={styles.Home}>
-                    <img src={homeIcon} alt="Home" className={styles["nav-icon"]} />
+                    <img src={homeIcon} alt="Home" className={styles["navbar-links"]} />
                 </Link>
                 <Link to="/Search" className={styles.Search}>
-                    <img src={searchIcon} alt="Search" className={styles["nav-icon"]} />
+                    <img src={searchIcon} alt="Search" className={styles["navbar-links"]} />
                 </Link>
 
+                <div className={styles.Closet}>
                   <ClosetButton></ClosetButton>
+                </div>
 
                 <Link to="/Tips" className={styles.Tips}>
-                    <img src={tipsIcon} alt="Tips" className={styles["nav-icon"]} />
+                    <img src={tipsIcon} alt="Tips" className={styles["navbar-links"]} />
                 </Link>
                 <Link to="/Profile" className={styles.Profile}>
-                    <img src={profileIcon} alt="Profile" className={styles["nav-icon"]} />
+                    <img src={profileIcon} alt="Profile" className={styles["navbar-links"]} />
                 </Link>
 
               

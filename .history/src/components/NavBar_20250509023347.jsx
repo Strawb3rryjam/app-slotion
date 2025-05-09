@@ -24,16 +24,14 @@ function NavBar() {
                     <img src={searchIcon} alt="Search" className={styles["nav-icon"]} />
                 </Link>
 
-                  <ClosetButton></ClosetButton>
-
-                <Link to="/Tips" className={styles.Tips}>
-                    <img src={tipsIcon} alt="Tips" className={styles["nav-icon"]} />
-                </Link>
+            
                 <Link to="/Profile" className={styles.Profile}>
                     <img src={profileIcon} alt="Profile" className={styles["nav-icon"]} />
                 </Link>
 
-              
+                <div className={styles.Tips}>
+                  <ClosetButton></ClosetButton>
+                </div>
 
             </div>
         </nav>

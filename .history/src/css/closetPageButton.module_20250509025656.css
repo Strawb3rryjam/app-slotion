@@ -29,34 +29,24 @@
 .dropdownOption2 {
     color: white;
     text-decoration: none; /* removes underline */
-    padding: 0.5rem 1rem; /* You can adjust this padding if needed */
+    padding: 0.5rem 1rem;
     border-radius: 4px;
     font-weight: bold;
     text-align: center;
     background-color: transparent;
     transition: background-color 0.2s;
     align-self: center;
-
+    margin: 0; /* Removes space between items */
+    padding: 0; /* Removes space inside the items */
     width: 361px;
     height: 59px;
     background-color: #364B3B; /* green background */
-    
-    margin: 0; /* Ensure there's no margin between the items */
 }
 
 .dropdownOption1:hover,
 .dropdownOption2:hover {
     background-color: #5E6F62; /* subtle hover effect */
 }
-
-/* Optional: Ensure no gap between the dropdown items */
-.dropdown {
-    margin: 0; /* Ensure no spacing between the items within the dropdown */
-    padding: 0; /* Remove padding if needed */
-    display: flex;
-    flex-direction: column;
-}
-
 
 .Closet {
     background: none;

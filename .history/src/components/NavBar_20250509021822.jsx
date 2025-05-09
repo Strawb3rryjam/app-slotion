@@ -24,7 +24,7 @@ function NavBar() {
                     <img src={searchIcon} alt="Search" className={styles["nav-icon"]} />
                 </Link>
 
-                  <ClosetButton></ClosetButton>
+
 
                 <Link to="/Tips" className={styles.Tips}>
                     <img src={tipsIcon} alt="Tips" className={styles["nav-icon"]} />
@@ -33,7 +33,6 @@ function NavBar() {
                     <img src={profileIcon} alt="Profile" className={styles["nav-icon"]} />
                 </Link>
 
-              
 
             </div>
         </nav>

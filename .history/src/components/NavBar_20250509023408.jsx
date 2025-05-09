@@ -24,7 +24,9 @@ function NavBar() {
                     <img src={searchIcon} alt="Search" className={styles["nav-icon"]} />
                 </Link>
 
+                <div className={styles.Closet}>
                   <ClosetButton></ClosetButton>
+                </div>
 
                 <Link to="/Tips" className={styles.Tips}>
                     <img src={tipsIcon} alt="Tips" className={styles["nav-icon"]} />

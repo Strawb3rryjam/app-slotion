@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    top: -30px; /* Move it up */
+    top: -10px; /* Move it up */
 }
 
 .dropdown {
@@ -29,7 +29,7 @@
 .dropdownOption2 {
     color: white;
     text-decoration: none; /* removes underline */
-    padding: 0.5rem 1rem; /* You can adjust this padding if needed */
+    padding: 0.5rem 1rem;
     border-radius: 4px;
     font-weight: bold;
     text-align: center;
@@ -39,24 +39,13 @@
 
     width: 361px;
     height: 59px;
-    background-color: #364B3B; /* green background */
-    
-    margin: 0; /* Ensure there's no margin between the items */
+    background-color: #4CAF50; /* green background */
 }
 
 .dropdownOption1:hover,
 .dropdownOption2:hover {
-    background-color: #5E6F62; /* subtle hover effect */
+    background-color: rgba(255, 255, 255, 0.2); /* subtle hover effect */
 }
-
-/* Optional: Ensure no gap between the dropdown items */
-.dropdown {
-    margin: 0; /* Ensure no spacing between the items within the dropdown */
-    padding: 0; /* Remove padding if needed */
-    display: flex;
-    flex-direction: column;
-}
-
 
 .Closet {
     background: none;
@@ -73,12 +62,12 @@
 
 /* Active state background color */
 .Closet.active {
-    background-color: #364B3B; /* Green background when active */
+    background-color: #4CAF50; /* Green background when active */
 }
 
 /* Inactive state background color */
 .Closet.inactive {
-    background-color: #FFFF; /* Light background when inactive */
+    background-color: #8419ff; /* Light background when inactive */
 }
 
 .nav-icon {

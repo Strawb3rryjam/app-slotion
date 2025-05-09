@@ -6,9 +6,8 @@ body {
   width: 393px;
   min-height: 852px; 
   margin: 0 auto;
-  zoom: 150%;
-
-
+  margin-top: 10px;
+  margin-bottom: 20px;
   
   background-color: #F5F3EF;
   position: relative;  
