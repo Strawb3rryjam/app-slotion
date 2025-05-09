@@ -6,6 +6,7 @@ export default function FinalNav() {
     return (
         <div className="nav-container">
             <NavBar />
+            <ClosetButton />
         </div>
     );
 }

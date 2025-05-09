@@ -1,8 +1,5 @@
-import pikmin from '../assets/pikmin.png'; // Adjust the path to your image
-
-/*Components*/
 import ImageGallery from '../components/closet_components/closetGallery'; // Make sure the path is correct
-import CreateOutfitButton from '../components/closet_components/createOutfitButton';
+import pikmin from '../assets/pikmin.png'; // Adjust the path to your image
 
 
 function Closet() {
@@ -10,7 +7,6 @@ function Closet() {
 
   return (
     <div>
-      <CreateOutfitButton></CreateOutfitButton>
       <h1>Closet</h1>
       <ImageGallery images={imageUrls} />
     </div>

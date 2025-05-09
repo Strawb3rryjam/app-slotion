@@ -3,6 +3,8 @@ import Home from './pages/Home';
 import Closet from './pages/Closet';
 import { Routes, Route } from 'react-router-dom';
 import FinalNav from './components/finalNav.jsx';
+import CreateOutfit from '.pages/CreateOutfit.jsx';
+
 import CreateOutfit from './pages/CreateOutfit.jsx';
 
 

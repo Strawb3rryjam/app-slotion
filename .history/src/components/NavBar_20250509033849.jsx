@@ -10,7 +10,7 @@ import tipsIcon from "../assets/leaf.svg";
 import profileIcon from "../assets/Profile.svg";
 
 /*component*/
-import ClosetButton from "../components/closet_components/closetPageButton";
+import ClosetButton from "../../components/closet_components/closetPageButton";
 
 
 function NavBar() {
