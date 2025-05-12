@@ -1,0 +1,19 @@
+.button {
+    width: 257px;
+    height: 63px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+}
+
+.primary {
+    background-color: #364B3B;
+    color: white;
+}
+
+.secondary {
+    background-color: grey;
+    color: #000;
+}
