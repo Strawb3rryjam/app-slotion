@@ -1,5 +1,7 @@
 
- function CreateOutfit() {
+
+
+function CreateOutfit() {
     return (
       <div>
         <h1>Create</h1>

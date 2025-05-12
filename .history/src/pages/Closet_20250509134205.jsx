@@ -1,6 +1,4 @@
-/*images */
 import pikmin from '../assets/pikmin.png'; // Adjust the path to your image
-
 
 /*Components*/
 import ImageGallery from '../components/closet_components/closetGallery'; // Make sure the path is correct
@@ -13,7 +11,6 @@ function Closet() {
   return (
     <div>
       <div className="closet-header">
-            {/*<img src={} alt="Hanger" className="closet-image" />*/}
             <h1 id='closetTitle'>Closet</h1>
             <CreateOutfitButton></CreateOutfitButton>
       </div>

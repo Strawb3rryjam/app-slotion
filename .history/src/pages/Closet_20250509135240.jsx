@@ -13,7 +13,7 @@ function Closet() {
   return (
     <div>
       <div className="closet-header">
-            {/*<img src={} alt="Hanger" className="closet-image" />*/}
+            {/*<img src={} alt="Pikmin" className="closet-image" />*/}
             <h1 id='closetTitle'>Closet</h1>
             <CreateOutfitButton></CreateOutfitButton>
       </div>

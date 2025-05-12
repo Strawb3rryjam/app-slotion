@@ -1,14 +1,13 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
-
-/*Pages*/
 import Home from './pages/Home';
 import Closet from './pages/Closet';
+import { Routes, Route } from 'react-router-dom';
 import CreateOutfit from './pages/CreateOutfit.jsx';
+import NavBar from './components/NavBar.jsx';
 
 function App() {
   return (  
-    <div className="app-container">
+    <div>
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />

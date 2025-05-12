@@ -1,10 +1,9 @@
 import NavBar from "../components/NavBar.jsx";
-import ClosetButton from "../components/closet_components/closetPageButton.jsx";   
-
+import styles from "../css/FinalNav.module.css";
 
 export default function FinalNav() {
     return (
-        <div className="nav-container">
+        <div className={styles["nav-container"]}>
             <NavBar />
         </div>
     );
