@@ -1,0 +1,137 @@
+{
+  "outerwear": [
+    {
+      "id": "outerwear-1",
+      "name": "Denim Jacket",
+      "image": "denim-jacket.jpg"
+    },
+    {
+      "id": "outerwear-2",
+      "name": "Leather Jacket",
+      "image": "leather-jacket.jpg"
+    },
+    {
+      "id": "outerwear-3",
+      "name": "Wool Coat",
+      "image": "wool-coat.jpg"
+    },
+    {
+      "id": "outerwear-4",
+      "name": "Bomber Jacket",
+      "image": "bomber-jacket.jpg"
+    },
+    {
+      "id": "outerwear-5",
+      "name": "Parka",
+      "image": "parka.jpg"
+    }
+  ],
+  "top": [
+    {
+      "id": "top-1",
+      "name": "White T-Shirt",
+      "image": "white-tshirt.jpg"
+    },
+    {
+      "id": "top-2",
+      "name": "Black Sweater",
+      "image": "black-sweater.jpg"
+    },
+    {
+      "id": "top-3",
+      "name": "Blue Button-Up",
+      "image": "blue-buttonup.jpg"
+    },
+    {
+      "id": "top-4",
+      "name": "Striped Blouse",
+      "image": "striped-blouse.jpg"
+    },
+    {
+      "id": "top-5",
+      "name": "Graphic Tee",
+      "image": "graphic-tee.jpg"
+    }
+  ],
+  "bottom": [
+    {
+      "id": "bottom-1",
+      "name": "Blue Jeans",
+      "image": "blue-jeans.jpg"
+    },
+    {
+      "id": "bottom-2",
+      "name": "Black Pants",
+      "image": "black-pants.jpg"
+    },
+    {
+      "id": "bottom-3",
+      "name": "Pleated Skirt",
+      "image": "pleated-skirt.jpg"
+    },
+    {
+      "id": "bottom-4",
+      "name": "Chino Pants",
+      "image": "chino-pants.jpg"
+    },
+    {
+      "id": "bottom-5",
+      "name": "Denim Shorts",
+      "image": "denim-shorts.jpg"
+    }
+  ],
+  "shoes": [
+    {
+      "id": "shoes-1",
+      "name": "White Sneakers",
+      "image": "white-sneakers.jpg"
+    },
+    {
+      "id": "shoes-2",
+      "name": "Black Boots",
+      "image": "black-boots.jpg"
+    },
+    {
+      "id": "shoes-3",
+      "name": "Loafers",
+      "image": "loafers.jpg"
+    },
+    {
+      "id": "shoes-4",
+      "name": "Sandals",
+      "image": "sandals.jpg"
+    },
+    {
+      "id": "shoes-5",
+      "name": "High Heels",
+      "image": "high-heels.jpg"
+    }
+  ],
+  "accessories": [
+    {
+      "id": "accessories-1",
+      "name": "Gold Necklace",
+      "image": "gold-necklace.jpg"
+    },
+    {
+      "id": "accessories-2",
+      "name": "Watch",
+      "image": "watch.jpg"
+    },
+    {
+      "id": "accessories-3",
+      "name": "Beanie Hat",
+      "image": "beanie-hat.jpg"
+    },
+    {
+      "id": "accessories-4",
+      "name": "Sunglasses",
+      "image": "sunglasses.jpg"
+    },
+    {
+      "id": "accessories-5",
+      "name": "Scarf",
+      "image": "scarf.jpg"
+    }
+  ]
+}

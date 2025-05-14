@@ -1,10 +1,12 @@
+import AddItem from "../components/closet_components/addItem.jsx";
 
- function CreateOutfit() {
+
+function CreateOutfit() {
     return (
       <div>
         <h1>Create</h1>
-        <p>Welcome to the home page!</p>
+        <AddItem />
       </div>
     );
   }
-  export default CreateOutfit;
+  export default CreateOutfit; 

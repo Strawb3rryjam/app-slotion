@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import Closet from './pages/Closet';
 import CreateOutfit from './pages/CreateOutfit.jsx';
 
+
+
 function App() {
   return (  
     <div className="app-container">
