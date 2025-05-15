@@ -19,7 +19,6 @@ function App() {
           <Route path="/Create-Outfit" element={<CreateOutfit />} />
           <Route path="/add-item" element={<AddItem />} />
             <Route path="/save-outfit" element={<SaveOutfit />} />
-
         </Routes>
       </main>
     </div>

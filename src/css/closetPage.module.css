@@ -1,7 +1,21 @@
+.createOutfitButtonText{
+  border-radius: 10px;
+  background: #364B3B;
+  color:white;
+  display: flex;
+  height: 36px;
+  padding: 8.69px 22.345px;
+  justify-content: center;
+  align-items: center;
+  gap: 12.414px;
+  flex-shrink: 0;
+  align-self: stretch;
+  border: none;
+
+}
 
 
 /*Create Outfit Styling Button*/
-
 .navbar {
   display: flex;
   align-items: center;
@@ -41,6 +55,10 @@
   font-weight: 600;
 }
 
+.rightButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
 
 /*Create Outfit Styling Button*/
 /* saveOutfit.module.css */
@@ -69,4 +87,72 @@
 .label {
   font-size: 0.75rem;
   text-align: center;
+}
+
+/* New Form Styling */
+.saveForm {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.tagContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.tag {
+  background-color: #e1f5fe;
+  color: #0277bd;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.removeTagButton {
+  background: none;
+  border: none;
+  color: #0277bd;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

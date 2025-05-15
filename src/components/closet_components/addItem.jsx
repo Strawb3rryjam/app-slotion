@@ -131,10 +131,7 @@ function AddItem() {
           onRightButtonClick={handleSaveOutfit}
         />
 
-        <div>
-          <p>Board</p>
-          <p>Tap on item and drag to adjust the position</p>
-        </div>
+
 
         <div className={styles.outfitBoard} style={{ position: 'relative', height: '300px' }}>
           {noItemsSelected ? (
@@ -174,12 +171,10 @@ function AddItem() {
             )
           )}
         </div>
-
+        
+    
         <div className={styles.homeControls}>
-          <div>
-            <p>Select</p>
-            <p>Select two or more items to create outfit</p>
-          </div>
+      
           <button className={styles.addItemButton} onClick={() => setPage('addItem')}>
             Add Item
           </button>
