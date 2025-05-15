@@ -2,136 +2,203 @@
   "outerwear": [
     {
       "id": "outerwear-1",
-      "name": "Denim Jacket",
-      "image": "denim-jacket.jpg"
+      "name": "Leather Jacket",
+      "image": "leatherjacket.png"
     },
     {
       "id": "outerwear-2",
-      "name": "Leather Jacket",
-      "image": "leather-jacket.jpg"
+      "name": "Jean Jacket",
+      "image": "jeanjacket.png"
     },
     {
       "id": "outerwear-3",
-      "name": "Wool Coat",
-      "image": "wool-coat.jpg"
+      "name": "Bomber Jacket",
+      "image": "bomberjacket.png"
     },
     {
       "id": "outerwear-4",
-      "name": "Bomber Jacket",
-      "image": "bomber-jacket.jpg"
+      "name": "White Jacket",
+      "image": "whitejacket.png"
     },
     {
       "id": "outerwear-5",
-      "name": "Parka",
-      "image": "parka.jpg"
+      "name": "Pink Sweater",
+      "image": "pinksweater.png"
     }
   ],
   "top": [
     {
       "id": "top-1",
-      "name": "White T-Shirt",
-      "image": "white-tshirt.jpg"
+      "name": "Nike Shirt",
+      "image": "niketop.png"
     },
     {
       "id": "top-2",
-      "name": "Black Sweater",
-      "image": "black-sweater.jpg"
+      "name": "White Hoodie",
+      "image": "whitehoodie.png"
     },
     {
       "id": "top-3",
-      "name": "Blue Button-Up",
-      "image": "blue-buttonup.jpg"
+      "name": "White sweater",
+      "image": "whitesweater.png"
     },
     {
       "id": "top-4",
-      "name": "Striped Blouse",
-      "image": "striped-blouse.jpg"
+      "name": "Stripe sweater",
+      "image": "stripesweater.png"
     },
     {
       "id": "top-5",
-      "name": "Graphic Tee",
-      "image": "graphic-tee.jpg"
+      "name": "Green Hoodie",
+      "image": "greenhoodie.png"
+    },
+    {
+      "id": "top-6",
+      "name": "Red Hoodie",
+      "image": "redhoodie.png"
+    }, 
+    {
+      "id": "top-7",
+      "name": "brown shirt",
+      "image": "browntshirt.png"
+    },
+      {
+      "id": "top-8",
+      "name": "blue shirt",
+      "image": "bluetshirt.png"
+    },
+    {
+      "id": "top-9",
+      "name": "green shirt",
+      "image": "greentshirt.png"
+    },
+      {
+      "id": "top-10",
+      "name": "Striped button-up",
+      "image": "stripebuttonup.png"
     }
+
+    
   ],
   "bottom": [
     {
       "id": "bottom-1",
-      "name": "Blue Jeans",
-      "image": "blue-jeans.jpg"
+      "name": "Pink pants",
+      "image": "pinkpants.png"
     },
     {
       "id": "bottom-2",
-      "name": "Black Pants",
-      "image": "black-pants.jpg"
+      "name": "Cream pants",
+      "image": "creampants.png"
     },
     {
       "id": "bottom-3",
-      "name": "Pleated Skirt",
-      "image": "pleated-skirt.jpg"
+      "name": "Pleated pants",
+      "image": "pleatedpants.png"
     },
     {
       "id": "bottom-4",
-      "name": "Chino Pants",
-      "image": "chino-pants.jpg"
+      "name": "Striped skirt",
+      "image": "stripeskirt.png"
     },
     {
       "id": "bottom-5",
-      "name": "Denim Shorts",
-      "image": "denim-shorts.jpg"
+      "name": "Brown Skirt",
+      "image": "brownskirt.png"
+    },
+     {
+      "id": "bottom-6",
+      "name": "Jeans",
+      "image": "jeans.png"
+    },
+     {
+      "id": "bottom-7",
+      "name": "Brown long skirt",
+      "image": "brownskirt.png"
+    },
+       {
+      "id": "bottom-8",
+      "name": "Black skinny jeans",
+      "image": "blackskinny.png"
+    },
+       {
+      "id": "bottom-9",
+      "name": "Black Jogger",
+      "image": "blackjogger.png"
+    },
+    {
+      "id": "bottom-10",
+      "name": "Grey pleated pants",
+      "image": "greypleatedpant.png"
+    },
+    {
+      "id": "bottom-11",
+      "name": "Green jeans",
+      "image": "greenjeans.png"
     }
   ],
   "shoes": [
     {
       "id": "shoes-1",
-      "name": "White Sneakers",
-      "image": "white-sneakers.jpg"
+      "name": "Green adidas",
+      "image": "adidasshoes.png"
     },
     {
       "id": "shoes-2",
       "name": "Black Boots",
-      "image": "black-boots.jpg"
+      "image": "blackboot.png"
     },
     {
       "id": "shoes-3",
-      "name": "Loafers",
-      "image": "loafers.jpg"
+      "name": "Grey sneakers",
+      "image": "greysneakers.png"
     },
     {
       "id": "shoes-4",
-      "name": "Sandals",
-      "image": "sandals.jpg"
+      "name": "Red adidas",
+      "image": "redsneakers.png"
+    },
+      {
+      "id": "shoes-5",
+      "name": "Stilletto",
+      "image": "stilletto.png"
     },
     {
-      "id": "shoes-5",
-      "name": "High Heels",
-      "image": "high-heels.jpg"
+      "id": "shoes-6",
+      "name": "New balance ",
+      "image": "redsneakers.png"
+    },
+     {
+      "id": "shoes-7",
+      "name": "Loafers",
+      "image": "redsneakers.png"
+    },
+     {
+      "id": "shoes-8",
+      "name": "sneakers",
+      "image": "redsneakers.png"
     }
   ],
   "accessories": [
     {
       "id": "accessories-1",
-      "name": "Gold Necklace",
-      "image": "gold-necklace.jpg"
+      "name": "Green glasses",
+      "image": "greenglasses.png"
     },
     {
       "id": "accessories-2",
-      "name": "Watch",
-      "image": "watch.jpg"
+      "name": "Brown cap",
+      "image": "brownhat.png"
     },
     {
       "id": "accessories-3",
-      "name": "Beanie Hat",
-      "image": "beanie-hat.jpg"
+      "name": "Brown watch",
+      "image": "watch.png"
     },
     {
       "id": "accessories-4",
-      "name": "Sunglasses",
-      "image": "sunglasses.jpg"
-    },
-    {
-      "id": "accessories-5",
-      "name": "Scarf",
-      "image": "scarf.jpg"
+      "name": "Jean cap",
+      "image": "jeanshat.png"
     }
   ]
 }
