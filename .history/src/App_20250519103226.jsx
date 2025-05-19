@@ -1,7 +1,7 @@
 import './App.css'
 import Home from './pages/Home'
 import Closet from './pages/Closet'
-import Profile from './pages/Profile'
+import Profile from './pages/Profie/Profile'
 import {Routes, Route} from 'react-router-dom'
 import NavBar from './components/NavBar'
 
@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path = "/" element = {<Home />} />
           <Route path = "/closet" element = {<Closet />} />
-          <Route path = "/profile" element = {<Profile />} />
+          <Route path = "/home" element = {<Profile />} />
         </Routes>
       </main>
     </div>
