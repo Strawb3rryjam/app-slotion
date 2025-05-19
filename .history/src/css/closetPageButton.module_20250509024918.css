@@ -1,0 +1,44 @@
+.closetWrapper {
+    width: 62.2px;
+    height: 62.2px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -10px; /* Move it up */
+}
+
+.Closet {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+/* Active state styling */
+.Closet.active {
+    background-color: #4CAF50; /* Green background when active */
+}
+
+/* Inactive state styling */
+.Closet.inactive {
+    background-color: #f0f0f0; /* Light background when inactive */
+}
+
+/* Optional: Hover effect for both active and inactive */
+.Closet:hover {
+    opacity: 0.8; /* Slightly fade on hover */
+}
+
+.nav-icon {
+    width: 40px;
+    height: auto;
+}

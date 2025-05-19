@@ -1,0 +1,16 @@
+:root {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+body {
+  width: 393px;
+  min-height: 852px;
+  margin: 0 auto;
+  background-color: #F5F3EF;
+  position: relative; /* Allows absolutely positioned children */
+  padding-bottom: 0px; /* Give space for navbar */
+}
+
+html {
+  background-color: #5E6F62;
+}

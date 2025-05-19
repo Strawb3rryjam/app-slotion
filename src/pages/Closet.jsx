@@ -1,9 +1,25 @@
 
+/*styles*/
+import styles from '../css/closetPage.module.css';
+
+/*Components*/
+import ImageGallery from '../components/closet_components/closetGallery'; // Make sure the path is correct
+import CreateOutfitButton from '../components/closet_components/createOutfitButton';
+
+/*Images*/
+import HangerImage from'../assets/Hanger.svg';
+
+
 function Closet() {
+
+
   return (
     <div>
-      <h1>Closet</h1>
-      <p>This is the closet page.</p>
+      <div className={styles["closetHeader"]}>
+            <img src={HangerImage} alt="Hanger" className={styles['closetHeader_image']} />
+            <h1 id={styles['closetHeader_title']}>Closet</h1>
+            <CreateOutfitButton></CreateOutfitButton>
+      </div>
     </div>
   );
 }

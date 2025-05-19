@@ -1,0 +1,43 @@
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); /* shifts it back by half its own width */
+
+  padding: 19px 32px 33px 32px;
+
+  display: flex;
+  justify-content: center;
+
+  background-image: url(../assets/NavBar.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  max-height: 84px;
+}
+
+  
+
+  
+ 
+  /*icons*/
+  .Home {
+    width: 28.444px;
+    height: 32px;
+  }
+
+  .Search{
+    width: 31px;
+    height: 31px;
+  }
+
+  .Tips{
+    width: 32px;
+    height: 32px;
+  }
+
+.Profile{
+  width: 32px;
+  height: 32px;
+}

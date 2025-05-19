@@ -1,0 +1,54 @@
+.closetWrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown {
+    top: ; /* adjust as needed */
+    border-radius: 8px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 0.5rem;
+    z-index: 10;
+
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.dropdownOption1,
+.dropdownOption2 {
+    color: white;
+    text-decoration: none; /* removes underline */
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    background-color: transparent;
+    transition: background-color 0.2s;
+    align-self: center;
+    background-color: #4CAF50; /* green background */
+
+
+}
+
+.dropdownOption1:hover,
+.dropdownOption2:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* subtle hover effect */
+}
+
+.Closet {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-icon {
+    width: 40px;
+    height: auto;
+}

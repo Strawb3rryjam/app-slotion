@@ -1,0 +1,40 @@
+.navbar {
+    background-color: white;
+    padding-top: 19px ;
+    width: 393px; 
+    position: absolute;  
+    bottom: 0px;        
+    left: 0;           
+    display: flex;
+    justify-content: center;  /* Align the navbar content centrally */
+}
+  
+.navbar-links {
+    display: flex;
+    justify-content: space-between; /* Space out the icons evenly */
+    align-items: center;
+    width: 100%; /* Take up the full width of the navbar */
+    padding: 0 10px; /* Add some padding to the sides */
+  }
+  
+ 
+  /*icons*/
+  .Home {
+    width: 28.444px;
+    height: 32px;
+  }
+
+  .Search{
+    width: 31px;
+    height: 31px;
+  }
+
+  .Tips{
+    width: 32px;
+    height: 32px;
+  }
+
+.Profile{
+  width: 32px;
+  height: 32px;
+}
