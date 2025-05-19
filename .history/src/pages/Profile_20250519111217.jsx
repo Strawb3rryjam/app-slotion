@@ -1,10 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 function Profile() {
-  useEffect(() => {
-    console.log("Profile component mounted");
-  }, []);
-
   return (
     <div className="w-full">
       <ProfileHeader username="Amanda Wu" />
@@ -86,20 +82,17 @@ function PostsGrid() {
 
   return (
     <div className="px-4 mt-4">
-      <div className="grid grid-cols-2 gap-x-[16px] gap-y-[14px] w-full max-w-[360px] mx-auto">
+      <div className="grid grid-cols-2 gap-4 w-full max-w-[1022px] mx-auto">
         {posts.map((post) => (
           <button
             key={post.id}
             onClick={() => handlePostClick(post.id)}
-            className="w-[172px] h-[172px] cursor-pointer hover:opacity-90 transition-opacity duration-200"
-            style={{ padding: 0, border: 'none', background: 'transparent' }}
+            className="w-[511px] h-[910px] p-0 border-0 bg-transparent cursor-pointer hover:opacity-90 transition-opacity"
           >
             <img
               src={post.src}
               alt={`Post ${post.id}`}
-              width="172"
-              height="172"
-              className="w-[172px] h-[172px] object-cover rounded-lg"
+              className="w-full h-full object-cover rounded-lg"
             />
           </button>
         ))}

@@ -1,10 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 function Profile() {
-  useEffect(() => {
-    console.log("Profile component mounted");
-  }, []);
-
   return (
     <div className="w-full">
       <ProfileHeader username="Amanda Wu" />
