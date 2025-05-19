@@ -7,7 +7,7 @@ import Closet from './pages/Closet';
 import Profile from './pages/Profile'
 import CreateOutfit from './pages/CreateOutfit.jsx';
 import Onboarding from './pages/Onboarding.jsx';
-import Login from './pages/Login.jsx'; // ✅ Add this
+import Login from './pages/Login.jsx'; 
 
 function App() {
   return (  

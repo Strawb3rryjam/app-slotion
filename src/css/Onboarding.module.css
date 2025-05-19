@@ -5,9 +5,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     text-align: center;
     background-color: var(--beige-base);
+    width: 393px;
+    min-height: 852px;
+    margin: 0 auto;
 }
 
 .backbutton-container {
