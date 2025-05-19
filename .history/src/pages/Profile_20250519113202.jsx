@@ -1,23 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 function Profile() {
-  useEffect(() => {
-    console.log("Profile component mounted");
-  }, []);
-
   return (
     <div className="w-full">
       <ProfileHeader username="Amanda Wu" />
       <ProfileNavigation />
       <PostsGrid />
-      <ProfileInfo
-        profileImage="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=114&h=114&fit=crop&auto=format"
-        username="Amanda Wu"
-        styleChips={["Chic", "Minimalistic", "Y2K"]}
-        followers={87}
-        following={45}
-        pronouns="she/her"
-      />
     </div>
   );
 }
@@ -27,6 +15,10 @@ function ProfileHeader({ username }) {
     <section
       className="flex flex-wrap gap-36 gap-y-36 justify-between content-end items-end self-stretch px-4 pt-14 pb-3.5 mt-0 text-base leading-none text-center text-black bg-stone-100 min-h-[99px]"
     >
+      <button
+        className="flex shrink-0 h-6 rounded-sm w-[15px]"
+        aria-label="Go back"
+      />
       <p className="text-black">
         Hello, <strong>{'Amanda Wu'}</strong>
       </p>
@@ -37,65 +29,6 @@ function ProfileHeader({ username }) {
           className="object-contain shrink-0 aspect-square w-[27px]"
         />
       </button>
-    </section>
-  );
-}
-
-export function ProfileInfo({
-  profileImage,
-  username,
-  styleChips,
-  followers,
-  following,
-  pronouns
-}) {
-  return (
-    <section className="flex flex-col items-center">
-      <img
-        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=114&h=114&fit=crop&auto=format"
-        alt="Profile picture"
-        className="object-contain mt-1.5 max-w-full rounded-full aspect-[0.99] w-[114px]"
-        onError={(e) => {
-          e.target.onerror = null;
-          e.target.src = "https://via.placeholder.com/114x114";
-        }}
-      />
-      <p
-        className="mt-2.5 text-sm leading-none text-center text-black"
-      >
-        @{username}
-      </p>
-      <div
-        className="flex gap-2 justify-center items-center mt-2 text-sm leading-none text-orange-50 whitespace-nowrap"
-      >
-        {styleChips.map((chip, index) => (
-          <span
-            key={index}
-            className="gap-2 self-stretch px-2.5 py-1 my-auto text-orange-50 rounded-xl bg-neutral-700"
-          >
-            {chip}
-          </span>
-        ))}
-      </div>
-      <div
-        className="flex gap-1.5 items-center mt-2.5 text-sm leading-none text-center text-black"
-      >
-        <p
-          className="self-stretch my-auto text-black"
-        >
-          {followers} Followers
-        </p>
-        <p
-          className="self-stretch my-auto text-black"
-        >
-          {following} Following
-        </p>
-      </div>
-      <p
-        className="mt-2 text-sm leading-none text-center text-black"
-      >
-        {pronouns}
-      </p>
     </section>
   );
 }
@@ -148,13 +81,13 @@ function PostsGrid() {
   };
 
   return (
-    <div className="flex justify-center items-center w-full px-4 mt-4">
-      <div className="grid grid-cols-2 gap-x-[16px] gap-y-[14px] w-[360px]">
+    <div className="px-4 mt-4">
+      <div className="grid grid-cols-2 gap-4 w-full max-w-[360px] mx-auto">
         {posts.map((post) => (
           <button
             key={post.id}
             onClick={() => handlePostClick(post.id)}
-            className="w-[172px] h-[172px] cursor-pointer hover:opacity-90 transition-opacity duration-200"
+            className="w-[172px] h-[172px]"
             style={{ padding: 0, border: 'none', background: 'transparent' }}
           >
             <img

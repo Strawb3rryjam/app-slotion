@@ -10,14 +10,6 @@ function Profile() {
       <ProfileHeader username="Amanda Wu" />
       <ProfileNavigation />
       <PostsGrid />
-      <ProfileInfo
-        profileImage="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=114&h=114&fit=crop&auto=format"
-        username="Amanda Wu"
-        styleChips={["Chic", "Minimalistic", "Y2K"]}
-        followers={87}
-        following={45}
-        pronouns="she/her"
-      />
     </div>
   );
 }
@@ -52,13 +44,9 @@ export function ProfileInfo({
   return (
     <section className="flex flex-col items-center">
       <img
-        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=114&h=114&fit=crop&auto=format"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/294f99533755d365f07f376237364aa1360daa66?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178"
         alt="Profile picture"
         className="object-contain mt-1.5 max-w-full rounded-full aspect-[0.99] w-[114px]"
-        onError={(e) => {
-          e.target.onerror = null;
-          e.target.src = "https://via.placeholder.com/114x114";
-        }}
       />
       <p
         className="mt-2.5 text-sm leading-none text-center text-black"
