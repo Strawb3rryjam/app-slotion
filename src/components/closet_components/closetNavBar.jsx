@@ -17,7 +17,7 @@ const ClosetNavBar = ({
   title,
   rightButtonText,
   onRightButtonClick,
-  isActive = true
+  isActive = false
 }) => {
   return (
     <nav className={styles.navBar}>
