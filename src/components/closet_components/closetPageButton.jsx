@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "../../css/closetPageButton.module.css";
+import styles from "../../css/closetPage.module.css";
 
 // Import icons
 import closetNotActive from "../../assets/Hanger.svg";

@@ -4,9 +4,9 @@ import styles from "../css/NavBar.module.css";  // Use this to import styles
 /*images*/
 import navBase from "../assets/NavBar.svg";
 import homeIcon from "../assets/Home.svg";
-import searchIcon from "../assets/search.svg";
+import searchIcon from "../assets/Search.svg";
 import closetIcon from "../assets/Hanger.svg";
-import tipsIcon from "../assets/leaf.svg";
+import tipsIcon from "../assets/Leaf.svg";
 import profileIcon from "../assets/Profile.svg";
 
 /*component*/

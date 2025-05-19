@@ -1,24 +1,25 @@
-/*images */
-import pikmin from '../assets/pikmin.png'; // Adjust the path to your image
 
+/*styles*/
+import styles from '../css/closetPage.module.css';
 
 /*Components*/
 import ImageGallery from '../components/closet_components/closetGallery'; // Make sure the path is correct
 import CreateOutfitButton from '../components/closet_components/createOutfitButton';
 
+/*Images*/
+import HangerImage from'../assets/Hanger.svg';
+
 
 function Closet() {
-  const imageUrls = [pikmin, pikmin, pikmin, pikmin];
+
 
   return (
     <div>
-      <div className="closet-header">
-            {/*<img src={} alt="Hanger" className="closet-image" />*/}
-            <h1 id='closetTitle'>Closet</h1>
+      <div className={styles["closetHeader"]}>
+            <img src={HangerImage} alt="Hanger" className={styles['closetHeader_image']} />
+            <h1 id={styles['closetHeader_title']}>Closet</h1>
             <CreateOutfitButton></CreateOutfitButton>
       </div>
-      <CreateOutfitButton></CreateOutfitButton>
-      <ImageGallery images={imageUrls} />
     </div>
   );
 }

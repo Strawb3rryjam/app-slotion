@@ -10,7 +10,7 @@ export default function CreateOutfitButton() {
 
   return (
     <div>
-      <button className={styles.createOutfitButtonText} onClick={handleClick}>
+      <button className={styles["createOutfitButton"]} onClick={handleClick}>
         Create Outfit
       </button>
     </div>
