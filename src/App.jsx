@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import Closet from './pages/Closet';
 import CreateOutfit from './pages/CreateOutfit.jsx';
 import Onboarding from './pages/Onboarding.jsx';
+import Login from './pages/Login.jsx';
+
 function App() {
   return (  
     <div className="app-container">
@@ -15,6 +17,7 @@ function App() {
           <Route path="/closet" element={<Closet />} />
           <Route path="/create-outfit" element={<CreateOutfit />} />
           <Route path="/onboarding" element={<Onboarding />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
     </div>

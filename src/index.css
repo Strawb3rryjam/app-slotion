@@ -1,5 +1,4 @@
 :root {
-  color: rgba(255, 255, 255, 0.87);
   --grey-50:#ececec;
   --grey-100:#c3c3c3;
   --grey-200:#a6a6a6;
@@ -36,7 +35,6 @@ body {
 
 html {
   background-color: #5E6F62;
-  
 }
 
 .large-title {

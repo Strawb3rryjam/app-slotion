@@ -1,11 +1,27 @@
 import styles from '../css/button.module.css';
-
-function Button({ text, onClick, type }) {
+import chevron from '../assets/chevron.svg';
+function LargeButton({ text, onClick, type }) {
     return (
-        <button className={`${styles.button} ${type === 'primary' ? styles.primary : styles.secondary}`} onClick={onClick}>
+        <button className={`${styles.lg_button} ${type === 'primary' ? styles.primary: styles.secondary}`} onClick={onClick}>
             {text}
         </button>
     );
 };
 
-export default Button;
+function SmallButton({ text, onClick, type }) {
+    return (
+        <button className={`${styles.sm_button} ${type === 'primary' ? styles.primary: styles.secondary}`} onClick={onClick}>
+            {text}
+        </button>
+    );
+};
+
+function BackButton({ onClick }) {
+    return (
+        <button className={`${styles.back_button} `} onClick={onClick}>
+          <img src={chevron} alt="back-icon" />
+        </button>
+    );
+};
+
+export { LargeButton, SmallButton, BackButton };
