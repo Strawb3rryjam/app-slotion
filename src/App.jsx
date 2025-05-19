@@ -7,6 +7,7 @@ import Closet from './pages/Closet';
 import Profile from './pages/Profile'
 import CreateOutfit from './pages/CreateOutfit.jsx';
 import Onboarding from './pages/Onboarding.jsx';
+import Login from './pages/Login.jsx'; // ✅ Add this
 
 function App() {
   return (  
@@ -15,9 +16,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/closet" element={<Closet />} />
-          <Route path = "/profile" element = {<Profile />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/create-outfit" element={<CreateOutfit />} />
           <Route path="/onboarding" element={<Onboarding />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
     </div>

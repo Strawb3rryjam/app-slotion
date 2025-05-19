@@ -1,0 +1,32 @@
+/*Page Layout*/
+
+.onboarding-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: var(--beige-base);
+}
+
+.backbutton-container {
+    position: absolute;
+    top: 60px;
+    left: 16px;
+    z-index: 10;
+}
+
+/*Content*/
+.bold-header {
+    color: var(--green-base);
+}
+
+.body-text {
+    color: var(--grey-300);
+}
+
+.illustration {
+    width: 198px;
+    height: 334px;
+}
