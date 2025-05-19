@@ -10,14 +10,6 @@ function Profile() {
       <ProfileHeader username="Amanda Wu" />
       <ProfileNavigation />
       <PostsGrid />
-      <ProfileInfo
-        profileImage="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=114&h=114&fit=crop&auto=format"
-        username="Amanda Wu"
-        styleChips={["Chic", "Minimalistic", "Y2K"]}
-        followers={87}
-        following={45}
-        pronouns="she/her"
-      />
     </div>
   );
 }
