@@ -1,0 +1,24 @@
+.follow_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    width: 63px;
+    height: 16px;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+
+.following {
+    background-color: var(--beige-base);
+    border: 1px solid var(--green-base);
+}
+
+.not_following {
+    background-color: var(--green-base);
+    color: white;
+    border: none;
+}

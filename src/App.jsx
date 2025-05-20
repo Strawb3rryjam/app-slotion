@@ -35,6 +35,6 @@ function App() {
       {/* If you have a separate Navbar component, include it like: <Navbar /> */}
     </div>
   );
-}
+};
 
 export default App;
