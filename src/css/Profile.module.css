@@ -63,11 +63,6 @@
   border-radius: 12px;
   font-size: 14px;
   line-height: 1;
-  transition: background-color 0.2s ease;
-}
-
-.styleChip:hover {
-  background-color: #FF5252;
 }
 
 .followStats {
