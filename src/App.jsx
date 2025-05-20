@@ -8,7 +8,8 @@ import Profile from './pages/Profile';
 import CreateOutfit from './pages/CreateOutfit.jsx';
 import Onboarding from './pages/Onboarding.jsx';
 import Login from './pages/Login.jsx';
-import AddItem from './pages/AddItem.jsx';      
+import AddItem from './components/closet_components/addItem.jsx';
+import AddNewItemPopup from './components/closet_components/addNewItem.jsx';
 import SaveOutfit from './pages/SaveOutfit.jsx'; 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/create-outfit" element={<CreateOutfit />} />
           <Route path="/add-item" element={<AddItem />} />
+          <Route path="/add-new-item" element={<AddNewItemPopup />} />
           <Route path="/save-outfit" element={<SaveOutfit />} />
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/login" element={<Login />} />
