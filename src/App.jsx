@@ -10,7 +10,10 @@ import Onboarding from './pages/Onboarding.jsx';
 import Login from './pages/Login.jsx';
 import AddItem from './components/closet_components/addItem.jsx';
 import AddNewItemPopup from './components/closet_components/addNewItem.jsx';
-import SaveOutfit from './pages/SaveOutfit.jsx'; 
+import SaveOutfit from './pages/SaveOutfit.jsx';
+
+import SlotionLibrary from './components/closet_components/slotionLibrary.jsx';
+import AddPhotos from './components/closet_components/addPhotos.jsx';
 
 function App() {
   return (
@@ -18,14 +21,18 @@ function App() {
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/closet" element={<Closet />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/onboarding" element={<Onboarding />} />
+          <Route path="/login" element={<Login />} />
+
+          {/* Closet Page */}
+          <Route path="/closet" element={<Closet />} />
           <Route path="/create-outfit" element={<CreateOutfit />} />
           <Route path="/add-item" element={<AddItem />} />
           <Route path="/add-new-item" element={<AddNewItemPopup />} />
           <Route path="/save-outfit" element={<SaveOutfit />} />
-          <Route path="/onboarding" element={<Onboarding />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/slotion-library" element={<SlotionLibrary />} />
+          <Route path="/add-photo" element={<AddPhotos />} />
         </Routes>
       </main>
     </div>
