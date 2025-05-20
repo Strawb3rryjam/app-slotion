@@ -15,10 +15,14 @@ function App() {
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
+
+
+            {/*Closet Page*/}
           <Route path="/Closet" element={<Closet />} />
           <Route path="/Create-Outfit" element={<CreateOutfit />} />
           <Route path="/add-item" element={<AddItem />} />
-            <Route path="/save-outfit" element={<SaveOutfit />} />
+          <Route path="/save-outfit" element={<SaveOutfit />} />
+        
         </Routes>
       </main>
     </div>
