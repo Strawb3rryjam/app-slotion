@@ -1,11 +1,16 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import styles from '../../css/addItem.module.css';
+import styles from "../../css/closetPage.module.css";
+
 import itemData from '../../services/items.json';
 import ClosetNavBar from './closetNavBar';
 import closeIcon from '../../assets/close.svg';
+import '../../index.css';
 
-// Import all images eagerly, get their default exports
+
+
+import TouchIcon from '../../assets/touch_double.svg';
+
 const imageImports = import.meta.glob('../../assets/**/*.{jpg,jpeg,png,svg}', {
   eager: true,
   import: 'default',
@@ -15,7 +20,6 @@ function AddItem() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Use state passed via navigation, or defaults if none
   const initialOutfit = location.state?.outfit ?? {
     outerwear: null,
     top: null,
@@ -39,7 +43,6 @@ function AddItem() {
   const [dragging, setDragging] = useState(null);
   const offset = useRef({ x: 0, y: 0 });
 
-  // Helper to get image src from the glob imports safely
   const getImageSrc = (category, filename) => {
     if (!filename) return null;
     const key = `../../assets/${category}/${filename}`;
@@ -114,6 +117,13 @@ function AddItem() {
 
   const renderHomePage = () => {
     const noItemsSelected = Object.values(outfit).every((item) => item === null);
+    const isSaveButtonActive = !noItemsSelected;
+
+      const handleSaveClick = () => {
+        if (isSaveButtonActive) {
+          handleSaveOutfit();
+        }
+      };
 
     return (
       <div
@@ -122,22 +132,36 @@ function AddItem() {
         onMouseUp={handleDragEnd}
         onMouseLeave={handleDragEnd}
       >
-        <ClosetNavBar
-          leftButtonImgSrc={closeIcon}
-          leftButtonAlt="Close Create Outfit"
-          onLeftButtonClick={handleCloseFromHome}
-          title="Create Outfit"
-          rightButtonText="Save Outfit"
-          onRightButtonClick={handleSaveOutfit}
-        />
+       <ClosetNavBar
+        leftButtonImgSrc={closeIcon}
+        leftButtonAlt="Close Create Outfit"
+        onLeftButtonClick={handleCloseFromHome}
+        title="Create Outfit"
+        rightButtonText="Save"
+        onRightButtonClick={handleSaveClick}
+        isActive={isSaveButtonActive}
+      />
 
 
+        <div className={styles.instructions}>
+             <img src={TouchIcon} alt="description" className={styles.instructions_img} />
+              <p className={styles.instructions_title}>Board</p>
+          
+          <p className={styles.instructions_desc}>Tap on item and drag to adjust the position</p>
+        </div>
 
-        <div className={styles.outfitBoard} style={{ position: 'relative', height: '300px' }}>
+        <div className={styles.outfitBoard}>
           {noItemsSelected ? (
-            <p className={styles.emptyOutfitText}>
-              No Item Selected. Click on “Add Item” button under the selected tab to start creating an outfit.
+            <div className={styles.outfitBoard_empty}>
+              <p className={styles.outfitBoard_empty1}>
+              No Item Selected
+              
             </p>
+            <p className={styles.outfitBoard_empty2}>
+              Click on “Add Item” button under the <span className={styles.outfitBoard_empty2selected}>Selected</span> tab to start creating an outfit.
+            </p>
+            </div>
+        
           ) : (
             ['outerwear', 'top', 'bottom', 'shoes', 'accessories'].map(
               (category) =>
@@ -168,65 +192,86 @@ function AddItem() {
                     </p>
                   </div>
                 )
+
+                
             )
-          )}
+            
+          )
+          }
         </div>
-        
-    
+
         <div className={styles.homeControls}>
-      
+        <div className={styles.homeControls_text}>
+          <p className={styles.homeControls_text1}>Selected</p>
+          <p className={styles.homeControls_text2}>Select two or more items to create outfit</p>
+        </div>
+
+        <div className={styles.previewCards}>
           <button className={styles.addItemButton} onClick={() => setPage('addItem')}>
-            Add Item
+            <div className={styles.addItemButton_content}>
+              <span className={styles.addItemButton_icon}>+</span>
+              <span>Add Item</span>
+            </div>
           </button>
 
-          <div className={styles.selectedItemsPreview}>
-            {['outerwear', 'top', 'bottom', 'shoes', 'accessories'].map(
-              (category) =>
-                outfit[category] && (
-                  <div key={category} className={styles.selectedPreviewCard}>
-                    <button
-                      className={styles.removeButton}
-                      onClick={() => handleRemoveItem(category)}
-                      aria-label={`Remove ${category}`}
-                    >
-                      ×
-                    </button>
-                    <img
-                      src={getImageSrc(category, outfit[category].image) || ''}
-                      alt={outfit[category].name}
-                      className={styles.selectedPreviewImage}
-                      draggable={false}
-                    />
-                    <p>{outfit[category].name}</p>
-                  </div>
-                )
-            )}
-          </div>
+          {['outerwear', 'top', 'bottom', 'shoes', 'accessories'].map(
+            (category) =>
+              outfit[category] && (
+                <div key={category} className={styles.previewCards_selected}>
+                  <button
+                    className={styles.previewCards_remove}
+                    onClick={() => handleRemoveItem(category)}
+                    aria-label={`Remove ${category}`}
+                  >
+                    ×
+                  </button>
+                  <img
+                    src={getImageSrc(category, outfit[category].image) || ''}
+                    alt={outfit[category].name}
+                    className={styles.previewCards_Image}
+                    draggable={false}
+                  />
+                </div>
+              )
+          )}
         </div>
+      </div>
+
       </div>
     );
   };
 
   const renderAddItemPage = () => {
     const items = itemData[selectedCategory] || [];
+    
+    const isRightButtonActive = outfit[selectedCategory] !== null;
+
+    const handleRightButtonClick = () => {
+      if (isRightButtonActive) {
+        handleAddToOutfit();
+      }
+    };
+
 
     return (
-      <div className={styles.addItemPage}>
-        <ClosetNavBar
-          leftButtonImgSrc={closeIcon}
-          leftButtonAlt="Back to Create Outfit"
-          onLeftButtonClick={handleCloseFromAddItem}
-          title="Add Item"
-          rightButtonText="Add"
-          onRightButtonClick={handleAddToOutfit}
-        />
+      <div className={styles.addItem}>
+            <ClosetNavBar
+            leftButtonImgSrc={closeIcon}
+            leftButtonAlt="Back to Create Outfit"
+            onLeftButtonClick={handleCloseFromAddItem}
+            title="Add Item"
+            rightButtonText="Add"
+            onRightButtonClick={handleRightButtonClick}
+            isActive={isRightButtonActive}
+          />
 
-        <div className={styles.categorySelector}>
+
+        <div className={styles.addItem_categorySelector}>
           {['outerwear', 'top', 'bottom', 'shoes', 'accessories'].map((category) => (
             <button
               key={category}
               className={`${styles.categoryButton} ${
-                selectedCategory === category ? styles.selected : ''
+                selectedCategory === category ? styles.categoryButton_selected : ''
               }`}
               onClick={() => handleCategorySelect(category)}
             >
@@ -261,18 +306,8 @@ function AddItem() {
           ))}
         </div>
 
-        <div className={styles.buttonContainer}>
-          <button className={styles.backButton} onClick={() => setPage('home')}>
-            Cancel
-          </button>
-          <button
-            className={styles.addButton}
-            onClick={handleAddToOutfit}
-            disabled={!outfit[selectedCategory]}
-          >
-            Add to Outfit
-          </button>
-        </div>
+          
+        
       </div>
     );
   };
