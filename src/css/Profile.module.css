@@ -1,0 +1,164 @@
+.profileHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #f5f5f4;
+  min-height: 50px;
+  position: relative;
+}
+
+.profileGreeting {
+  color: black;
+  font-size: 16px;
+  line-height: 1;
+  text-align: center;
+}
+
+.settingsIcon {
+  width: 27px;
+  height: 27px;
+  object-fit: contain;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileImage {
+  width: 114px;
+  height: 114px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 6px;
+}
+
+.username {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  color: black;
+}
+
+.styleChips {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.styleChip {
+  padding: 4px 10px;
+  background-color: #364B3B;
+  color: white;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.followStats {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  color: black;
+}
+
+.pronouns {
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  color: black;
+  margin-top: 0;
+}
+
+.profileNav {
+  width: 100%;
+}
+
+.navButtons {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin: 0 auto 0;
+  max-width: 200px;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.navIcon {
+  display: flex;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+}
+
+.activeIndicator {
+  display: flex;
+  justify-content: center;
+  height: 2px;
+  width: 34px;
+  border-radius: 10px;
+  background-color: #364B3B;
+}
+
+.navDivider {
+  margin-top: 6px;
+  width: 393px;
+  height: 1px;
+  background-color: #3E3E3E;
+  border: 1px solid #3E3E3E;
+}
+
+.postsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.postsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 14px;
+  width: 100;
+  margin: 0 auto;
+}
+
+.postButton {
+  width: 172px;
+  height: 172px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.postButton:hover {
+  opacity: 0.9;
+}
+
+.postImage {
+  width: 172px;
+  height: 172px;
+  object-fit: cover;
+  border-radius: 8px;
+} 

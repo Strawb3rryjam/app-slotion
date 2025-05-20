@@ -1,53 +1,56 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import styles from '../../css/closetPage.module.css';
 
+import addButton from '../../assets/add_Item.svg';
+import forwardButton from '../../assets/arrow_forward.svg';
 
+const ClosetGallery = ({ title, photoSets }) => {
+  const [currentSetIndex, setCurrentSetIndex] = useState(0);
 
-
-const ImageGallery = ({ images }) => {
-  // State to track the index of the first image in the current set
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Function to go to the next set of 3 images
-  const nextImages = () => {
-    if (currentIndex + 3 < images.length) {
-      setCurrentIndex(currentIndex + 3);
-    }
+  const nextSet = () => {
+    setCurrentSetIndex((prevIndex) => (prevIndex + 1) % photoSets.length);
   };
 
-  // Function to go to the previous set of 3 images
-  const prevImages = () => {
-    if (currentIndex - 3 >= 0) {
-      setCurrentIndex(currentIndex - 3);
-    }
-  };
+  const currentPhotos = photoSets[currentSetIndex];
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      {/* Display 3 images at a time */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginBottom: '20px' }}>
-        {images.slice(currentIndex, currentIndex + 3).map((image, index) => (
-          <img key={index} src={image} alt={`image-${index}`} style={{ width: '200px', height: 'auto' }} />
-        ))}
+    <div className={styles.closetGallery}>
+      {/* Header with buttons and title */}
+      <div className={styles.closetGallery_header}>
+        {/* Left: Add Button */}
+        <Link to="/add-item" className="closetGallery" aria-label="Add new item">
+          <img src={addButton} alt="Add Item" className={styles.closetGallery_add} />
+        </Link>
+
+        {/* Center: Title */}
+        <h2 className={styles.closetGallery_title}>
+          {title}
+        </h2>
+
+        {/* Right: Forward Button (triggers state change) */}
+        <button onClick={nextSet} aria-label="Next item set">
+          <img src={forwardButton} alt="Next Set" className={styles.closetGallery_forward} />
+        </button>
       </div>
 
-      {/* Navigation buttons */}
-      <div>
-        <button
-          onClick={prevImages}
-          disabled={currentIndex === 0}  // Disable the button if we're at the start
-          style={{ marginRight: '20px' }}
-        >
-          &lt; Previous
-        </button>
-        <button
-          onClick={nextImages}
-          disabled={currentIndex + 3 >= images.length}  // Disable the button if we've reached the end
-        >
-          Next &gt;
-        </button>
+      {/* Photo Gallery Section */}
+      <div className={styles.closetGallery_grid}>
+        {currentPhotos && currentPhotos.length > 0 ? (
+          currentPhotos.map((photo) => (
+            <img
+              key={photo.id}
+              src={photo.src}
+              alt={photo.alt}
+              className={styles.closetGallery_image}
+            />
+          ))
+        ) : (
+          <p className={styles.emptyMessage}>No items in closet yet.</p>
+        )}
       </div>
     </div>
   );
 };
 
-export default ImageGallery;
+export default ClosetGallery;
