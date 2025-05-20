@@ -1,0 +1,39 @@
+.lg_button {
+    width: 330px;
+    height: 63px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+}
+
+.sm_button {
+    width: 330px;
+    height: 63px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+}
+
+.back_button {
+    width: 15px;
+    height: 24px;
+    border: none;
+    padding: 13px 16px;
+    background: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary {
+    background-color: #364B3B;
+    color: white;
+}
+
+.secondary {
+    background-color: var(--beige-base);
+    color: #000;
+}
