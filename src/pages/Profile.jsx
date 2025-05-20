@@ -1,4 +1,23 @@
 import React, { useEffect } from "react";
+import styles from '../css/Profile.module.css';
+import profilePicture from '../assets/profile_page/profile-picture.jpg';
+
+function ProfileHeader({ username }) {
+  return (
+    <section className={styles.profileHeader}>
+      <p className={styles.profileGreeting}>
+        Hello, <strong>{'Amanda Wu'}</strong>
+      </p>
+      <button aria-label="Settings">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d94ffadff03bcd5ab6f3372b04d6607026a9dc68?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178"
+          alt="Settings icon"
+          className={styles.settingsIcon}
+        />
+      </button>
+    </section>
+  );
+}
 
 function Profile() {
   useEffect(() => {
@@ -6,38 +25,19 @@ function Profile() {
   }, []);
 
   return (
-    <div className="w-full">
+    <div style={{ width: '100%' }}>
       <ProfileHeader username="Amanda Wu" />
-      <ProfileNavigation />
-      <PostsGrid />
       <ProfileInfo
-        profileImage="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=114&h=114&fit=crop&auto=format"
+        profileImage={profilePicture}
         username="Amanda Wu"
         styleChips={["Chic", "Minimalistic", "Y2K"]}
         followers={87}
         following={45}
         pronouns="she/her"
       />
+      <ProfileNavigation />
+      <PostsGrid />
     </div>
-  );
-}
-
-function ProfileHeader({ username }) {
-  return (
-    <section
-      className="flex flex-wrap gap-36 gap-y-36 justify-between content-end items-end self-stretch px-4 pt-14 pb-3.5 mt-0 text-base leading-none text-center text-black bg-stone-100 min-h-[99px]"
-    >
-      <p className="text-black">
-        Hello, <strong>{'Amanda Wu'}</strong>
-      </p>
-      <button aria-label="Settings">
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d94ffadff03bcd5ab6f3372b04d6607026a9dc68?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178"
-          alt="Settings icon"
-          className="object-contain shrink-0 aspect-square w-[27px]"
-        />
-      </button>
-    </section>
   );
 }
 
@@ -50,85 +50,59 @@ export function ProfileInfo({
   pronouns
 }) {
   return (
-    <section className="flex flex-col items-center">
+    <section className={styles.profileInfo}>
       <img
-        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=114&h=114&fit=crop&auto=format"
+        src={profileImage}
         alt="Profile picture"
-        className="object-contain mt-1.5 max-w-full rounded-full aspect-[0.99] w-[114px]"
+        className={styles.profileImage}
         onError={(e) => {
           e.target.onerror = null;
           e.target.src = "https://via.placeholder.com/114x114";
         }}
       />
-      <p
-        className="mt-2.5 text-sm leading-none text-center text-black"
-      >
-        @{username}
-      </p>
-      <div
-        className="flex gap-2 justify-center items-center mt-2 text-sm leading-none text-orange-50 whitespace-nowrap"
-      >
+      <p className={styles.username}>@{username}</p>
+      <div className={styles.styleChips}>
         {styleChips.map((chip, index) => (
-          <span
-            key={index}
-            className="gap-2 self-stretch px-2.5 py-1 my-auto text-orange-50 rounded-xl bg-neutral-700"
-          >
+          <span key={index} className={styles.styleChip}>
             {chip}
           </span>
         ))}
       </div>
-      <div
-        className="flex gap-1.5 items-center mt-2.5 text-sm leading-none text-center text-black"
-      >
-        <p
-          className="self-stretch my-auto text-black"
-        >
-          {followers} Followers
-        </p>
-        <p
-          className="self-stretch my-auto text-black"
-        >
-          {following} Following
-        </p>
+      <div className={styles.followStats}>
+        <p>{followers} Followers</p>
+        <p>{following} Following</p>
       </div>
-      <p
-        className="mt-2 text-sm leading-none text-center text-black"
-      >
-        {pronouns}
-      </p>
+      <p className={styles.pronouns}>{pronouns}</p>
     </section>
   );
 }
 
 export function ProfileNavigation() {
-    return (
-      <nav className="w-full">
-        <div
-          className="flex gap-5 justify-between mt-7 mx-auto max-w-full w-[200px]"
-        >
-          <div className="flex flex-col">
-            <button aria-label="Grid view">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/0d20c95fa377b74a8c9e90419f571d2b11c30cfd?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178"
-                alt="Grid view icon"
-                className="object-contain self-center aspect-square w-[34px]"
-              />
-            </button>
-            <div className="flex shrink-0 h-0.5 rounded-xl bg-neutral-700" />
-          </div>
-          <button aria-label="List view">
+  return (
+    <nav className={styles.profileNav}>
+      <div className={styles.navButtons}>
+        <div className={styles.navItem}>
+          <button aria-label="Grid view">
             <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/8d590067275a993023e821a7977508c86fa5fb0f?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178"
-              alt="List view icon"
-              className="object-contain shrink-0 aspect-square w-[34px]"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/0d20c95fa377b74a8c9e90419f571d2b11c30cfd?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178"
+              alt="Grid view icon"
+              className={styles.navIcon}
             />
           </button>
+          <div className={styles.activeIndicator} />
         </div>
-        <div className="shrink-0 self-stretch mt-1.5 w-full h-px border border-solid bg-neutral-700 border-neutral-700" />
-      </nav>
-    );
-  }
-  
+        <button aria-label="List view">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/8d590067275a993023e821a7977508c86fa5fb0f?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178"
+            alt="List view icon"
+            className={styles.navIcon}
+          />
+        </button>
+      </div>
+      <div className={styles.navDivider} />
+    </nav>
+  );
+}
 
 function PostsGrid() {
   const posts = [
@@ -144,25 +118,21 @@ function PostsGrid() {
 
   const handlePostClick = (postId) => {
     console.log(`Post ${postId} clicked`);
-    // Add your click handler logic here
   };
 
   return (
-    <div className="flex justify-center items-center w-full px-4 mt-4">
-      <div className="grid grid-cols-2 gap-x-[16px] gap-y-[14px] w-[360px]">
+    <div className={styles.postsContainer}>
+      <div className={styles.postsGrid}>
         {posts.map((post) => (
           <button
             key={post.id}
             onClick={() => handlePostClick(post.id)}
-            className="w-[172px] h-[172px] cursor-pointer hover:opacity-90 transition-opacity duration-200"
-            style={{ padding: 0, border: 'none', background: 'transparent' }}
+            className={styles.postButton}
           >
             <img
               src={post.src}
               alt={`Post ${post.id}`}
-              width="172"
-              height="172"
-              className="w-[172px] h-[172px] object-cover rounded-lg"
+              className={styles.postImage}
             />
           </button>
         ))}
