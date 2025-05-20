@@ -24,18 +24,34 @@
   --beige-base: #FBF8F1;
 }
 
+
+/* Add to your index.css or update existing body styles */
 body {
   width: 393px;
-  min-height: 852px;
+  height: 852px; /* Fixed height */
   margin: 0 auto;
   background-color: #F5F3EF;
-  position: relative; /* Allows absolutely positioned children */
-  padding-bottom: 100px; /* Give space for navbar */
+  position: relative;
+  overflow: hidden; /* Prevent body from scrolling */
+  padding-bottom: 0; /* Remove padding as it's handled by scroll-container */
 }
 
 html {
   background-color: #5E6F62;
 }
+
+/* If you have a navbar component, make sure it has these styles */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Center the navbar */
+  width: 393px; /* Match body width */
+  background-color: var(--beige-base);
+  z-index: 1000;
+}
+
+
 
 .large-title {
   font-family: 'Outfit', sans-serif;
@@ -127,3 +143,5 @@ html {
   font-weight: semibold;
   line-height: 16px;
 }
+
+
