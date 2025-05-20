@@ -1,9 +1,11 @@
+import styles from '../css/HomePage.module.css';
+import TopBar from '../components/home_components/TopBar';
+
 function Home() {
   return (
-    <div>
-      <h1>Home</h1>
-      <p>Welcome to the home page!</p>
-    </div>
+    <nav className={styles["nav-container"]}>
+      <TopBar />
+    </nav>
   );
 }
 export default Home;
