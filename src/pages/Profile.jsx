@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from '../css/Profile.module.css';
 import profilePicture from '../assets/profile_page/profile-picture.jpg';
 
@@ -20,6 +20,8 @@ function ProfileHeader({ username }) {
 }
 
 function Profile() {
+  const [currentPage, setCurrentPage] = useState(1);
+
   useEffect(() => {
     console.log("Profile component mounted");
   }, []);
@@ -35,8 +37,8 @@ function Profile() {
         following={45}
         pronouns="she/her"
       />
-      <ProfileNavigation />
-      <PostsGrid />
+      <ProfileNavigation currentPage={currentPage} onPageChange={setCurrentPage} />
+      {currentPage === 1 ? <PostsGrid /> : <LookbookPage />}
     </div>
   );
 }
@@ -77,27 +79,38 @@ export function ProfileInfo({
   );
 }
 
-export function ProfileNavigation() {
+export function ProfileNavigation({ currentPage, onPageChange }) {
   return (
     <nav className={styles.profileNav}>
       <div className={styles.navButtons}>
         <div className={styles.navItem}>
-          <button aria-label="Grid view">
+          <button 
+            aria-label="Grid view"
+            onClick={() => onPageChange(1)}
+            className={currentPage === 1 ? styles.active : ''}
+          >
             <img
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/0d20c95fa377b74a8c9e90419f571d2b11c30cfd?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178"
               alt="Grid view icon"
               className={styles.navIcon}
             />
           </button>
-          <div className={styles.activeIndicator} />
+          {currentPage === 1 && <div className={styles.activeIndicator} />}
         </div>
-        <button aria-label="List view">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/8d590067275a993023e821a7977508c86fa5fb0f?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178"
-            alt="List view icon"
-            className={styles.navIcon}
-          />
-        </button>
+        <div className={styles.navItem}>
+          <button 
+            aria-label="List view"
+            onClick={() => onPageChange(2)}
+            className={currentPage === 2 ? styles.active : ''}
+          >
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/8d590067275a993023e821a7977508c86fa5fb0f?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178"
+              alt="List view icon"
+              className={styles.navIcon}
+            />
+          </button>
+          {currentPage === 2 && <div className={styles.activeIndicator} />}
+        </div>
       </div>
       <div className={styles.navDivider} />
     </nav>
@@ -140,5 +153,156 @@ function PostsGrid() {
     </div>
   );
 }
+
+function LookbookPage() {
+  const sampleCollections = [
+    {
+      id: 1,
+      column: 1,
+      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/294f99533755d365f07f376237364aa1360daa66?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
+      name: "Summer Vibes",
+      outfitCount: 12
+    },
+    {
+      id: 2,
+      column: 2,
+      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/8917e47cd905e1b67bcae4e44a74dccba8c99661?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
+      name: "Winter Collection",
+      outfitCount: 8
+    },
+    {
+      id: 3,
+      column: 1,
+      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/73c90c7bc17e79dee082cbc37357f9cd6dd5b39e?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
+      name: "Casual Days",
+      outfitCount: 15
+    },
+    {
+      id: 4,
+      column: 2,
+      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/ab55b3e7a6c626e895e7f565e9f364f71d205f5a?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
+      name: "Formal Wear",
+      outfitCount: 6
+    },    {
+      id: 5,
+      column: 1,
+      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/ab55b3e7a6c626e895e7f565e9f364f71d205f5a?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
+      name: "Formal Wear",
+      outfitCount: 6
+    },
+    {
+      id: 6,
+      column: 2,
+      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/ab55b3e7a6c626e895e7f565e9f364f71d205f5a?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
+      name: "Formal Wear",
+      outfitCount: 6
+    }
+  ];
+
+  return (
+    <div className={styles.lookbookPage}>
+      <div className={styles.lookbookContent}>
+        <SearchBar />
+        <CollectionGrid collections={sampleCollections} />
+      </div>
+    </div>
+  );
+}
+
+function SearchBar() {
+  return (
+    <div className={styles.searchBarContainer}>
+      <div className={styles.searchBar}>
+        <div className={styles.searchBarContent}>
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/09b10aacb7c95993d23b80e119581ab3e58f0bf2?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178"
+            className={styles.searchIcon}
+            alt="Search icon"
+          />
+          <span className={styles.searchText}>
+            Search
+          </span>
+        </div>
+      </div>
+      <button 
+        className={styles.filterButton}
+        aria-label="Open filters"
+      >
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/52b2ecc1df02dde448719f15397d69db7098471c?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178"
+          className={styles.filterIcon}
+          alt="Filter icon"
+        />
+      </button>
+    </div>
+  );
+}
+
+const CollectionCard = ({
+  imageUrl,
+  name,
+  outfitCount,
+  isFirst = false
+}) => {
+  const handleClick = () => {
+    console.log(`Collection ${name} clicked`);
+  };
+
+  return (
+    <button 
+      className={styles.collectionCard}
+      onClick={handleClick}
+      aria-label={`View ${name} collection`}
+    >
+      <img
+        src={imageUrl}
+        className={styles.collectionImage}
+        alt={`${name} collection`}
+      />
+      <div className={styles.collectionInfo}>
+        <h3 className={styles.collectionName}>
+          {name}
+        </h3>
+        <p className={styles.outfitCount}>
+          {outfitCount} Outfits
+        </p>
+      </div>
+    </button>
+  );
+};
+
+const CollectionGrid = ({ collections }) => {
+  // Split collections into two columns
+  const column1Collections = collections.filter(collection => collection.column === 1);
+  const column2Collections = collections.filter(collection => collection.column === 2);
+
+  return (
+    <div className={styles.collectionGrid}>
+      <div className={styles.gridColumn}>
+        {column1Collections.map((collection, index) => (
+          <CollectionCard
+            key={collection.id}
+            imageUrl={collection.imageUrl}
+            name={collection.name}
+            outfitCount={collection.outfitCount}
+            isFirst={index === 0}
+          />
+        ))}
+      </div>
+      <div className={styles.gridColumn}>
+        {column2Collections.map((collection, index) => (
+          <CollectionCard
+            key={collection.id}
+            imageUrl={collection.imageUrl}
+            name={collection.name}
+            outfitCount={collection.outfitCount}
+            isFirst={index === 0}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 
 export default Profile; 
