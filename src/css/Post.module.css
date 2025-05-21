@@ -262,4 +262,27 @@ span {
 
 
 
+/*Choose Outfit*/
 
+.chooseOutfit_header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  position: relative;
+  top: 0;
+}
+
+
+.chooseOutfit_grid {
+ display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* spacing between items */
+  justify-content: center;
+  padding: 16px;
+}
+
+.chooseOutfit_grid img{
+    height: 172px;
+    width: 172px;
+}

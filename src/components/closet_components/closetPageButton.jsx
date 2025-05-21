@@ -22,14 +22,14 @@ export default function ClosetButton() {
             {isActive && (
                 <div className={styles.dropdown}>
                     <Link 
-                        to="/CreatePost" 
+                        to="/create-post" 
                         className={styles.dropdownOption1} 
                         onClick={handleOptionClick} // Reset to inactive on click
                     >
                         Create Post
                     </Link>
                     <Link 
-                        to="/Closet" 
+                        to="/closet" 
                         className={styles.dropdownOption2} 
                         onClick={handleOptionClick} // Reset to inactive on click
                     >

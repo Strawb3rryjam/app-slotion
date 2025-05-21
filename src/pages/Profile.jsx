@@ -8,7 +8,12 @@ import Freeze from '../assets/weather/Freeze.svg';
 import Windy from '../assets/weather/Windy.svg';
 import Hot from '../assets/weather/Hot.svg';
 import Snow from '../assets/weather/Snow.svg';
-
+import AllOutfits from '../assets/homeposts/thumbnail_1.png';
+import Minimalistic from '../assets/homeposts/thumbnail_2.png';
+import Summer from '../assets/homeposts/thumbnail_3.png';
+import Chic from '../assets/homeposts/thumbnail_4.png';
+import Comfy from '../assets/homeposts/thumbnail_5.png';
+import Y2K from '../assets/homeposts/thumbnail_6.png';
 
 function ProfileHeader({ username }) {
   return (
@@ -176,57 +181,44 @@ function LookbookPage() {
     {
       id: 1,
       column: 1,
-      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/294f99533755d365f07f376237364aa1360daa66?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
+      imageUrl: AllOutfits,
       name: "All Outfits",
       outfitCount: 74
     },
     {
       id: 2,
       column: 2,
-      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/8917e47cd905e1b67bcae4e44a74dccba8c99661?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
+      imageUrl: Minimalistic,
       name: "Minimalistic",
       outfitCount: 23
     },
     {
       id: 3,
       column: 1,
-      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/73c90c7bc17e79dee082cbc37357f9cd6dd5b39e?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
+      imageUrl: Summer,
       name: "Summer",
       outfitCount: 12
     },
     {
       id: 4,
       column: 2,
-      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/ab55b3e7a6c626e895e7f565e9f364f71d205f5a?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
+      imageUrl: Chic,
       name: "Chic",
       outfitCount: 27
-    },    {
+    },
+    {
       id: 5,
       column: 1,
-      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/ab55b3e7a6c626e895e7f565e9f364f71d205f5a?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
+      imageUrl: Comfy,
       name: "Comfy",
       outfitCount: 7
     },
     {
       id: 6,
       column: 2,
-      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/ab55b3e7a6c626e895e7f565e9f364f71d205f5a?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
+      imageUrl: Y2K,
       name: "Y2K",
       outfitCount: 18
-    },
-    {
-      id: 6,
-      column: 1,
-      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/ab55b3e7a6c626e895e7f565e9f364f71d205f5a?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
-      name: "Night Out",
-      outfitCount: 14
-    },
-    {
-      id: 6,
-      column: 2,
-      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/ab55b3e7a6c626e895e7f565e9f364f71d205f5a?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
-      name: "Fall",
-      outfitCount: 21
     }
   ];
 
