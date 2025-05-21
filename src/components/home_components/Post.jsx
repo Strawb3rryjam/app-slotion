@@ -16,34 +16,161 @@ import thumbnail_4 from '../../assets/homeposts/thumbnail_4.png';
 import thumbnail_5 from '../../assets/homeposts/thumbnail_5.png';
 import thumbnail_6 from '../../assets/homeposts/thumbnail_6.png';
 import profilePic_1 from '../../assets/homeposts/profilePic_1.png';
-import { FollowButton } from './FollowButton';
+import profilePic_2 from '../../assets/homeposts/profilePic_2.png';
+import profilePic_3 from '../../assets/homeposts/profilePic_3.png';
+import profilePic_4 from '../../assets/homeposts/profilePic_4.png';
+import profilePic_5 from '../../assets/homeposts/profilePic_5.png';
+import { FollowButton, UnfollowedButton } from './FollowButton';
 import outfitPost_1 from '../../assets/homeposts/outfitPost_1.png';
 import outfitPost_2 from '../../assets/homeposts/outfitPost_2.png';
+import outfitPost_3 from '../../assets/homeposts/outfitPost_3.png';
+import outfitPost_4 from '../../assets/homeposts/outfitPost_4.png';
+import outfitPost_5 from '../../assets/homeposts/outfitPost_5.png';
+import fitCheck_1 from '../../assets/homeposts/fitCheck_1.png';
+import fitCheck_2 from '../../assets/homeposts/fitCheck_2.png';
+import fitCheck_3_1 from '../../assets/homeposts/fitCheck_3_1.png';
+import fitCheck_3_2 from '../../assets/homeposts/fitCheck_3_2.png';
+import fitCheck_3_3 from '../../assets/homeposts/fitCheck_3_3.png';
+
+
+function CommunityPost() {
+
+    const [showOverlay, setShowOverlay] = useState(false);
+
+    const handleOpenOverlay = () => setShowOverlay(true);
+    const handleCloseOverlay = () => setShowOverlay(false);
+
+    return (
+    <div className={styles.post}>
+            <div className={styles.post_container}>
+                <PostHeader 
+                    profilePic={profilePic_4}
+                    username="Vy.truong"
+                    content="Vaycay fit in Vietnam! 🌴☀️"
+                    isFollowing={true}
+                />
+                <StyleChips 
+                    styleChips={["Coquette", "Summer", "Cute"]}
+                />
+                <Carousel 
+                    postPicture1={fitCheck_3_1}
+                    outfitCard={outfitPost_4}
+                    hasFitCheck={true}
+                />
+                <DetailCard 
+                    outfitDetails={["Top: Navy top", "Skirt: Grey Pants", "Shoes: Loafers"]}
+                    shopNames={["Value Village", "Value Village", "Steve Madden"]}
+                />
+                <PostFooter onSaveClick={handleOpenOverlay} />
+            </div>
+            <div className={styles.post_container}>
+                <PostHeader 
+                    profilePic={profilePic_5}
+                    username="Jamie.lee"
+                    content="My go to Uni fit... comfortable and stylish!"
+                    isFollowing={true}
+                />
+                <StyleChips 
+                    styleChips={["Comfy", "School", "Athleisure"]}
+                />
+                <Carousel 
+                    postPicture1={outfitPost_5}
+                    hasFitCheck={false}
+                />
+                <DetailCard 
+                 outfitDetails={["Top: Grey t-shirt", "Pants: Darkgrey Jeans", "Shoes: Khaki boots"]}
+                 shopNames={["H&M", "H&M", "Value Village"]}
+                 />
+                <PostFooter onSaveClick={handleOpenOverlay} />
+            </div>
+            {showOverlay && <CollectionOverlay onClose={handleCloseOverlay} />}
+        </div>  
+    );
+}
 
 function Post() {
+    const [showOverlay, setShowOverlay] = useState(false);
+
+    const handleOpenOverlay = () => setShowOverlay(true);
+    const handleCloseOverlay = () => setShowOverlay(false);
+
     return (
-       <div className={styles.post_container}>
-        <PostHeader 
-            profilePic={profilePic_1}
-            username="Mckayala13"
-            content="First day at my new job"
-        />
-        <Carousel 
-            postPicture1={outfitPost_1}
-        />
-        <DetailCard />
-        <PostFooter />
-       </div>
+        <div className={styles.post}>
+            <div className={styles.post_container}>
+                <PostHeader 
+                    profilePic={profilePic_1}
+                    username="Mckayala13"
+                    content="First day at my new job 😀💻✨"
+                    isFollowing={false}
+                />
+                <StyleChips 
+                    styleChips={["Office Siren", "Business Casual"]}
+                />
+                <Carousel 
+                    postPicture1={outfitPost_1}
+                    hasFitCheck={false}
+                />
+                <DetailCard 
+                    outfitDetails={["Top: Navy top", "Skirt: Grey Pants", "Shoes: Loafers"]}
+                    shopNames={["Value Village", "Value Village", "Steve Madden"]}
+                />
+                <PostFooter onSaveClick={handleOpenOverlay} />
+            </div>
+            <div className={styles.post_container}>
+                <PostHeader 
+                    profilePic={profilePic_2}
+                    username="JakeP.14"
+                    content="Fit check" 
+                    isFollowing={false}
+                />
+                <StyleChips 
+                    styleChips={["Menswear", "Minimalistic", "Everyday"]}
+                />
+                <Carousel 
+                    postPicture1={fitCheck_1}
+                    outfitCard={outfitPost_2}
+                    hasFitCheck={true}
+                />
+                <DetailCard 
+                 outfitDetails={["Top: Grey t-shirt", "Pants: Darkgrey Jeans", "Shoes: Khaki boots"]}
+                 shopNames={["H&M", "H&M", "Value Village"]}
+                 />
+                <PostFooter onSaveClick={handleOpenOverlay} />
+            </div>
+            <div className={styles.post_container}>
+                <PostHeader 
+                    profilePic={profilePic_3}
+                    username="usernamee"
+                    content="Hope everyone is havin a wonderful day!"
+                    isFollowing={false}
+                />
+                <StyleChips 
+                    styleChips={["Cottage Core", "Fairycore", "Indie"]}
+                />
+                <Carousel 
+                    postPicture1={fitCheck_2}
+                    outfitCard={outfitPost_3}
+                    hasFitCheck={true}
+                />
+                <DetailCard 
+                 outfitDetails={["Top: Basic white t-shirt", "Skirt: denim midiskirt", "Shoes: black loafers"]}
+                 shopNames={["Aritzia", "Garage", "Thriftque"]}
+                />
+                <PostFooter onSaveClick={handleOpenOverlay} />
+            </div>
+            {showOverlay && <CollectionOverlay onClose={handleCloseOverlay} />}
+        </div>       
+
     );
 };
 
-function PostHeader({ profilePic, username, content }) {
+function PostHeader({ profilePic, username, content, isFollowing }) {
     return (
         <div className={styles.post_header}>
             <div className={styles.profile_container}>
                 <img src={profilePic} alt="profile-pic" className={styles.profile_pic}/>
                 <p className={styles.username}>{username}</p>
-                <FollowButton />
+                {!isFollowing ? <FollowButton /> : <UnfollowedButton />}
             </div>
             <div className={styles.content_container}>
              <p className={styles.content}>{content}</p>
@@ -53,16 +180,29 @@ function PostHeader({ profilePic, username, content }) {
     );
 };
 
-function Carousel({ postPicture1, postPicture2, postPicture3 }) {
+function StyleChips({ styleChips = [] }) {
+    return (
+        <div className={styles.styleChips}>
+            {styleChips.map((chip, index) => (
+                <span key={index} className={styles.styleChip}>
+                    {chip}
+                </span>
+            ))}
+        </div>
+    );
+};
+
+function Carousel({ postPicture1, postPicture2, postPicture3, outfitCard, hasFitCheck }) {
     return (
         <div className={styles.carousel}>
             <img src={postPicture1} alt="post-pic" className={styles.post_picture} />
+            <img src={outfitCard} alt="outfit-card" className={`${styles.outfit_card} ${hasFitCheck === true ? styles.visible : styles.invisible}`}/>
         </div>
     );
 
 };
 
-function DetailCard() {
+function DetailCard({ outfitDetails = [], shopNames = [] }) {
     return (
         <div className={styles.detail_card_container}>
             <div className={styles.detail_card_header}>
@@ -71,9 +211,9 @@ function DetailCard() {
             </div>
             <div className={styles.detail_card_content}>
                 <ul className={styles.detail_card_list}>
-                    <li className={styles.info_item}>Top: babydoll top <span>Thriftque</span></li>
-                    <li className={styles.info_item}>Skirt: white skirt <span>Aritzia</span></li>
-                    <li className={styles.info_item}>Shoes: New Balance <span>Value Village</span></li>
+                    <li className={styles.info_item}>{outfitDetails[0]} <span>{shopNames[0]}</span></li>
+                    <li className={styles.info_item}>{outfitDetails[1]} <span>{shopNames[1]}</span></li>
+                    <li className={styles.info_item}>{outfitDetails[2]} <span>{shopNames[2]}</span></li>
                 </ul>
             </div>
             
@@ -81,15 +221,15 @@ function DetailCard() {
     );
 }
 
-function PostFooter() {
+function PostFooter({ onSaveClick }) {
     return (
         <div className={styles.post_footer}>
             <div className={styles.icon_button_container}>
-            <LikeButton /> 
-            <CommentButton /> 
-            <ShareButton />
+                <LikeButton /> 
+                <CommentButton /> 
+                <ShareButton />
+                <SaveButton onSaveClick={onSaveClick} />
             </div>
-            <SaveButton />
         </div>
     );
 };
@@ -115,12 +255,9 @@ function CommentButton() {
     };
 
     return (
-        <div className={styles.comment_button_container}>
         <button className={styles.comment_button} onClick={handleComment}>
             <img src={Comment} alt="comment-icon" />
         </button>
-        <p className={styles.button_count}>5</p>
-        </div>
     );
 }
 
@@ -137,11 +274,12 @@ function ShareButton() {
     );
 }
 
-function SaveButton() {
+function SaveButton({ onSaveClick }) {
     const [isSaved, setIsSaved] = useState(false);
     
     const handleSave = () => {
         setIsSaved(!isSaved);
+        if (onSaveClick) onSaveClick();
     };
 
     return (
@@ -151,18 +289,14 @@ function SaveButton() {
     );
 }
 
-function CollectionOverlay() {
-
-    const [isOpen, setIsOpen] = useState(false);
-    const handleCloseOverlay = () => {
-        setIsOpen(false);
-    };
-
+function CollectionOverlay({ onClose }) {
     return (
        <div className={styles.collection_overlay}>
         <div className={styles.collection_overlay_header}>
-        <img src={close} alt="close-icon" className={styles.close_icon} onClick={handleCloseOverlay} />
-        <h3 className={styles.collection_title}>My Collections</h3>
+            <button className={styles.close_button} onClick={onClose}>
+                <img src={close} alt="close-icon" className={styles.close_icon} />
+            </button>
+            <h3 className={styles.collection_title}>My Collections</h3>
         </div>
         <div className={styles.collection_card_container}>
         <div className={styles.collection_card}>
@@ -200,5 +334,5 @@ function CollectionOverlay() {
     );
 }
 
-export { Post, PostHeader, Carousel, PostFooter, SaveButton, CollectionOverlay, LikeButton, CommentButton, ShareButton, DetailCard };
+export { Post, CommunityPost, PostHeader, Carousel, PostFooter, SaveButton, CollectionOverlay, LikeButton, CommentButton, ShareButton, DetailCard, StyleChips };
 
