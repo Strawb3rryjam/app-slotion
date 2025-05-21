@@ -3,9 +3,12 @@ import styles from '../css/LoginPage.module.css';
 import apple from '../assets/icon/apple.png';    
 import google from '../assets/icon/google.png';
 import facebook from '../assets/icon/facebook.png';    
+import { LargeButton } from '../components/button.jsx';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className={styles.container}>
@@ -25,11 +28,11 @@ function Login() {
           /> 
         </div>
         <span className={styles.forgot}>Forgot password?</span>
-
-        <button className={styles.loginBtn} type="submit">
-          Log in
-        </button>
       </form>
+
+      <div className={styles.loginButton}>
+      <LargeButton text="Log in" type="primary" onClick={() => navigate('/')}/>
+      </div>
 
       <div className={styles.orDivider}>
         <hr className={styles.line} />
@@ -42,6 +45,8 @@ function Login() {
         <button className={styles.socialBtn}><img src={google} alt="Google" /></button>
         <button className={styles.socialBtn}><img src={facebook} alt="Facebook" /></button>
       </div>
+
+
 
       <hr className={styles.bottomLine} />
 
