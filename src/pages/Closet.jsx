@@ -75,6 +75,7 @@ function Closet() {
       <ClosetGallery title="Outerwear" photoSets={[outerwear1, outerwear2]} />
       <ClosetGallery title="Top" photoSets={[tops1, tops2]} />
       <ClosetGallery title="Bottom" photoSets={[bottoms1, bottoms2]} />
+
     </div>
   );
 }

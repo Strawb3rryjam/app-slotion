@@ -31,8 +31,7 @@ function App() {
           </main>
         </div>
       </div>
-      {/* Note: Your navbar component should be placed here outside the scroll-container */}
-      {/* If you have a separate Navbar component, include it like: <Navbar /> */}
+     
     </div>
   );
 };
