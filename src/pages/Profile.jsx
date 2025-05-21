@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from "react";
 import styles from '../css/Profile.module.css';
 import profilePicture from '../assets/profile_page/profile-picture.jpg';
+import Sun from '../assets/weather/Sun.svg';
+import Cloudy from '../assets/weather/Cloudy.svg';
+import Rain from '../assets/weather/Rain.svg';
+import Freeze from '../assets/weather/Freeze.svg';
+import Windy from '../assets/weather/Windy.svg';
+import Hot from '../assets/weather/Hot.svg';
+import Snow from '../assets/weather/Snow.svg';
+
 
 function ProfileHeader({ username }) {
   return (
@@ -155,6 +163,7 @@ function PostsGrid() {
 }
 
 function LookbookPage() {
+  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const sampleCollections = [
     {
       id: 1,
@@ -199,17 +208,25 @@ function LookbookPage() {
     }
   ];
 
+  const openFilterModal = () => setIsFilterModalOpen(true);
+  const closeFilterModal = () => setIsFilterModalOpen(false);
+  const handleApplyFilter = () => {
+    // Add filter logic here
+    setIsFilterModalOpen(false);
+  };
+
   return (
     <div className={styles.lookbookPage}>
       <div className={styles.lookbookContent}>
-        <SearchBar />
+        <SearchBar onFilterClick={openFilterModal} />
         <CollectionGrid collections={sampleCollections} />
+        <FilterModal open={isFilterModalOpen} onClose={closeFilterModal} onApply={handleApplyFilter} />
       </div>
     </div>
   );
 }
 
-function SearchBar() {
+function SearchBar({ onFilterClick }) {
   return (
     <div className={styles.searchBarContainer}>
       <div className={styles.searchBar}>
@@ -227,6 +244,7 @@ function SearchBar() {
       <button 
         className={styles.filterButton}
         aria-label="Open filters"
+        onClick={onFilterClick}
       >
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/52b2ecc1df02dde448719f15397d69db7098471c?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178"
@@ -304,5 +322,74 @@ const CollectionGrid = ({ collections }) => {
   );
 };
 
+export function FilterModal({ open, onClose, onApply }) {
+  if (!open) return null;
+  return (
+    <div className={styles.modalOverlay} onClick={onClose}>
+      <div className={styles.filterModal} onClick={e => e.stopPropagation()}>
+        <div className={styles.filterModalHeader}>
+          <button className={styles.closeButton} onClick={onClose} aria-label="Close filter modal">×</button>
+          <h2>Filter Outfits</h2>
+        </div>
+        <div className={styles.filterSection}>
+          <div className={styles.filterLabel}>Style</div>
+          <div className={styles.filterChips}>
+            <span className={styles.filterChip}>Chic</span>
+            <span className={styles.filterChip}>Minimalistic</span>
+            <span className={styles.filterChip}>Y2K</span>
+          </div>
+        </div>
+        <div className={styles.filterSection}>
+          <div className={styles.filterLabel}>Weather</div>
+          <div className={styles.weatherIcons}>
+            <div className={styles.weatherIcon}><img src={Sun} alt="Sunny"/><span>Sunny</span></div>
+            <div className={styles.weatherIcon}><img src={Cloudy} alt="Cloudy"/><span>Cloudy</span></div>
+            <div className={styles.weatherIcon}><img src={Rain} alt="Rainy"/><span>Rainy</span></div>
+            <div className={styles.weatherIcon}><img src={Snow} alt="Snowy"/><span>Snowy</span></div>
+            <div className={styles.weatherIcon}><img src={Windy} alt="Windy"/><span>Windy</span></div>
+          </div>    
+          <div className={styles.weatherIcons}>
+            <div className={styles.weatherIcon}><img src={Freeze} alt="Freeze"/><span>Cold</span></div>
+            <div className={styles.weatherIcon}><img src={Hot} alt="Hot"/><span>Hot</span></div>
+          </div>
+        </div> 
+        <div className={styles.filterSection}>
+          <div className={styles.filterLabel}>Season</div>
+          <div className={styles.filterChips}>
+            <span className={styles.filterChip}>Summer</span>
+            <span className={styles.filterChip}>Fall</span>
+            <span className={styles.filterChip}>Winter</span>
+            <span className={styles.filterChip}>Spring</span>
+          </div>
+        </div>
+        <div className={styles.filterSection}>
+          <div className={styles.filterLabel}>Colour</div>
+          <div className={styles.filterChips}>
+            <span className={styles.filterChip}>Black</span>
+            <span className={styles.filterChip}>White</span>
+            <span className={styles.filterChip}>Red</span>
+            <span className={styles.filterChip}>Orange</span>
+            <span className={styles.filterChip}>Yellow</span>
+            <span className={styles.filterChip}>Green</span>
+            <span className={styles.filterChip}>Blue</span>
+            <span className={styles.filterChip}>Purple</span>
+            <span className={styles.filterChip}>Brown</span>
+          </div>
+        </div>
+        <div className={styles.filterSection}>
+          <div className={styles.filterLabel}>Occasion</div>
+          <div className={styles.filterChips}>
+            <span className={styles.filterChip}>Casual</span>
+            <span className={styles.filterChip}>Party</span>
+            <span className={styles.filterChip}>Formal</span>
+            <span className={styles.filterChip}>Business</span>
+            <span className={styles.filterChip}>Night Out</span>
+          </div>
+        </div>
+        <button className={styles.applyFilterButton} onClick={onApply}>Apply Filter</button>
+      </div>
+    </div>
+  );
+}
 
-export default Profile; 
+export default Profile;
