@@ -139,6 +139,7 @@
   align-items: center;
   width: 100%;
   margin-top: 16px;
+  padding-bottom: 200px;
 }
 
 .postsGrid {
@@ -174,9 +175,10 @@
   min-height: 400px;
   width: 393px;
   display: flex;
-justify-content: center;
+  justify-content: center;
   gap: 16px;
   margin: 0 auto;
+  padding-bottom: 200px;
 }
 
 .lookbookContent {
@@ -216,6 +218,7 @@ justify-content: center;
   gap: 8px;
   align-items: center;
   height: 100%;
+  width: 100%;
 }
 
 .searchIcon {
@@ -224,6 +227,21 @@ justify-content: center;
   height: 32px;
   display: flex;
   align-items: center;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #3E3E3E;
+  padding: 0;
+  outline: none;
+  width: 100%;
+}
+
+.searchInput::placeholder {
+  color: #737373;
 }
 
 .searchText {
