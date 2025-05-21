@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from '../css/Profile.module.css';
 import profilePicture from '../assets/profile_page/profile-picture.jpg';
 import Sun from '../assets/weather/Sun.svg';
@@ -16,6 +17,8 @@ import Comfy from '../assets/homeposts/thumbnail_5.png';
 import Y2K from '../assets/homeposts/thumbnail_6.png';
 
 function ProfileHeader({ username }) {
+  const navigate = useNavigate();
+  
   return (
     <section className={styles.profileHeader}>
       <p className={styles.profileGreeting}>
@@ -26,6 +29,7 @@ function ProfileHeader({ username }) {
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/d94ffadff03bcd5ab6f3372b04d6607026a9dc68?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178"
           alt="Settings icon"
           className={styles.settingsIcon}
+          onClick={() => navigate('/settings')}
         />
       </button>
     </section>
