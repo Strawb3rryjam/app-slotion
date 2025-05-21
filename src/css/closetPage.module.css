@@ -85,10 +85,12 @@ body{
 
 .closetHeader_image{
 width: 63.778px;
-height: 54.452px
+height: 54.452px;
+  position: relative;
+  top: 50px; 
 }
 
-#closetHeader_title{
+.closetHeader_title{
   color: #364B3B;
   text-align: center;
   font-family: Outfit;
@@ -96,32 +98,19 @@ height: 54.452px
   font-style: normal;
   font-weight: 700;
   line-height: 74px;
-  margin-bottom: 0px;
-}
-
-
-
-.createOutfitButtonText{
-  border-radius: 10px;
-  background: #364B3B;
-  color:white;
-  display: flex;
-  height: 36px;
-  padding: 8.69px 22.345px;
-  justify-content: center;
-  align-items: center;
-  gap: 12.414px;
-  flex-shrink: 0;
-  align-self: stretch;
-  border: none;
+  margin-bottom: 13px;
 
 }
+
+
+
 
 /*Clothes Gallery*/
 
 .closetGallery{
    display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+  border-top: 1px solid black;
 }
 
 
@@ -130,8 +119,8 @@ height: 54.452px
   justify-content: space-between;
   align-items: center;
 
-  padding-left:16px;
-  padding-right:16px;
+  padding: 16px;
+
 
 }
 
@@ -143,7 +132,6 @@ height: 54.452px
   height: 37px;
   width: 37px;
 }
-
 
 .closetGallery_title{
   display: flex;
@@ -165,7 +153,7 @@ height: 54.452px
  display: flex;
   flex-wrap: nowrap;
   gap: 1rem;
-  justify-content: flex-start; 
+  justify-content: center; 
   
 }
 
@@ -181,13 +169,14 @@ height: 108.706px;
 .createOutfitButton{
 display: flex;
 height: 36px;
-padding: 8.69px 22.345px;
+width: 173px;
 justify-content: center;
 align-items: center;
 gap: 12.414px;
 flex-shrink: 0;
 align-self: stretch;
 border-radius: 10px;
+margin-bottom: 17px;
 border: none;
 
 color: #FFF;
@@ -198,6 +187,7 @@ font-weight: 700;
 line-height: 20px; 
 font-family:Poppins, sans-serif;
 background: var(--green-base);
+
 
 }
 
@@ -1164,28 +1154,6 @@ color: var(--grey-base);
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-
-/*Closet Gallery*/
-
-.closetGallery {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
-  border-top: 1px solid black
-
-}
-
-.closetGallery_title{
-  color: #537059;
-  text-align: center;
-  font-family: Poppins;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 20px;
 }
 
 
