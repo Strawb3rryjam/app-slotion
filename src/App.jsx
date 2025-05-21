@@ -16,6 +16,7 @@ import SlotionLibrary from './components/closet_components/slotionLibrary.jsx';
 import AddPhotos from './components/closet_components/addPhotos.jsx';
 import AddItemForm from './components/closet_components/newItemForm.jsx';
 import AddItemFormComplete from './components/closet_components/newItemFormComplete.jsx';
+import Search from './pages/Search.jsx';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/save-outfit" element={<SaveOutfit />} />
           <Route path="/slotion-library" element={<SlotionLibrary />} />
           <Route path="/add-photo" element={<AddPhotos />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
       </main>
     </div>
