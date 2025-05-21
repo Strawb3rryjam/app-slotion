@@ -164,6 +164,14 @@ function PostsGrid() {
 
 function LookbookPage() {
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
+  const [selectedFilters, setSelectedFilters] = useState({
+    styles: [],
+    weather: [],
+    seasons: [],
+    colors: [],
+    occasions: []
+  });
+
   const sampleCollections = [
     {
       id: 1,
@@ -210,9 +218,11 @@ function LookbookPage() {
 
   const openFilterModal = () => setIsFilterModalOpen(true);
   const closeFilterModal = () => setIsFilterModalOpen(false);
-  const handleApplyFilter = () => {
-    // Add filter logic here
+  
+  const handleApplyFilter = (filters) => {
+    setSelectedFilters(filters);
     setIsFilterModalOpen(false);
+    console.log('Applied filters:', filters); // For debugging
   };
 
   return (
@@ -220,7 +230,11 @@ function LookbookPage() {
       <div className={styles.lookbookContent}>
         <SearchBar onFilterClick={openFilterModal} />
         <CollectionGrid collections={sampleCollections} />
-        <FilterModal open={isFilterModalOpen} onClose={closeFilterModal} onApply={handleApplyFilter} />
+        <FilterModal 
+          open={isFilterModalOpen} 
+          onClose={closeFilterModal} 
+          onApply={handleApplyFilter}
+        />
       </div>
     </div>
   );
@@ -323,6 +337,76 @@ const CollectionGrid = ({ collections }) => {
 };
 
 export function FilterModal({ open, onClose, onApply }) {
+  const [selectedStyles, setSelectedStyles] = useState([]);
+  const [selectedWeather, setSelectedWeather] = useState([]);
+  const [selectedSeasons, setSelectedSeasons] = useState([]);
+  const [selectedColors, setSelectedColors] = useState([]);
+  const [selectedOccasions, setSelectedOccasions] = useState([]);
+
+  const handleStyleClick = (style) => {
+    console.log('Style clicked:', style);
+    setSelectedStyles(prev => {
+      const newState = prev.includes(style) 
+        ? prev.filter(s => s !== style)
+        : [...prev, style];
+      console.log('New styles state:', newState);
+      return newState;
+    });
+  };
+
+  const handleWeatherClick = (weather) => {
+    console.log('Weather clicked:', weather);
+    setSelectedWeather(prev => {
+      const newState = prev.includes(weather) 
+        ? prev.filter(w => w !== weather)
+        : [...prev, weather];
+      console.log('New weather state:', newState);
+      return newState;
+    });
+  };
+
+  const handleSeasonClick = (season) => {
+    console.log('Season clicked:', season);
+    setSelectedSeasons(prev => {
+      const newState = prev.includes(season) 
+        ? prev.filter(s => s !== season)
+        : [...prev, season];
+      console.log('New seasons state:', newState);
+      return newState;
+    });
+  };
+
+  const handleColorClick = (color) => {
+    console.log('Color clicked:', color);
+    setSelectedColors(prev => {
+      const newState = prev.includes(color) 
+        ? prev.filter(c => c !== color)
+        : [...prev, color];
+      console.log('New colors state:', newState);
+      return newState;
+    });
+  };
+
+  const handleOccasionClick = (occasion) => {
+    console.log('Occasion clicked:', occasion);
+    setSelectedOccasions(prev => {
+      const newState = prev.includes(occasion) 
+        ? prev.filter(o => o !== occasion)
+        : [...prev, occasion];
+      console.log('New occasions state:', newState);
+      return newState;
+    });
+  };
+
+  // Add a debug log to see the current state
+  console.log('Current filter states:', {
+    styles: selectedStyles,
+    weather: selectedWeather,
+    seasons: selectedSeasons,
+    colors: selectedColors,
+    occasions: selectedOccasions
+  });
+
   if (!open) return null;
   return (
     <div className={styles.modalOverlay} onClick={onClose}>
@@ -334,59 +418,217 @@ export function FilterModal({ open, onClose, onApply }) {
         <div className={styles.filterSection}>
           <div className={styles.filterLabel}>Style</div>
           <div className={styles.filterChips}>
-            <span className={styles.filterChip}>Chic</span>
-            <span className={styles.filterChip}>Minimalistic</span>
-            <span className={styles.filterChip}>Y2K</span>
+            <span 
+              className={`${styles.filterChip} ${selectedStyles.includes('Chic') ? styles.selected : ''}`}
+              onClick={() => handleStyleClick('Chic')}
+            >
+              Chic
+            </span>
+            <span 
+              className={`${styles.filterChip} ${selectedStyles.includes('Minimalistic') ? styles.selected : ''}`}
+              onClick={() => handleStyleClick('Minimalistic')}
+            >
+              Minimalistic
+            </span>
+            <span 
+              className={`${styles.filterChip} ${selectedStyles.includes('Y2K') ? styles.selected : ''}`}
+              onClick={() => handleStyleClick('Y2K')}
+            >
+              Y2K
+            </span>
           </div>
         </div>
         <div className={styles.filterSection}>
           <div className={styles.filterLabel}>Weather</div>
           <div className={styles.weatherIcons}>
-            <div className={styles.weatherIcon}><img src={Sun} alt="Sunny"/><span>Sunny</span></div>
-            <div className={styles.weatherIcon}><img src={Cloudy} alt="Cloudy"/><span>Cloudy</span></div>
-            <div className={styles.weatherIcon}><img src={Rain} alt="Rainy"/><span>Rainy</span></div>
-            <div className={styles.weatherIcon}><img src={Snow} alt="Snowy"/><span>Snowy</span></div>
-            <div className={styles.weatherIcon}><img src={Windy} alt="Windy"/><span>Windy</span></div>
+            <div 
+              className={`${styles.weatherIcon} ${selectedWeather.includes('Sunny') ? styles.selected : ''}`}
+              onClick={() => handleWeatherClick('Sunny')}
+            >
+              <img src={Sun} alt="Sunny"/>
+              <span>Sunny</span>
+            </div>
+            <div 
+              className={`${styles.weatherIcon} ${selectedWeather.includes('Cloudy') ? styles.selected : ''}`}
+              onClick={() => handleWeatherClick('Cloudy')}
+            >
+              <img src={Cloudy} alt="Cloudy"/>
+              <span>Cloudy</span>
+            </div>
+            <div 
+              className={`${styles.weatherIcon} ${selectedWeather.includes('Rainy') ? styles.selected : ''}`}
+              onClick={() => handleWeatherClick('Rainy')}
+            >
+              <img src={Rain} alt="Rainy"/>
+              <span>Rainy</span>
+            </div>
+            <div 
+              className={`${styles.weatherIcon} ${selectedWeather.includes('Snowy') ? styles.selected : ''}`}
+              onClick={() => handleWeatherClick('Snowy')}
+            >
+              <img src={Snow} alt="Snowy"/>
+              <span>Snowy</span>
+            </div>
+            <div 
+              className={`${styles.weatherIcon} ${selectedWeather.includes('Windy') ? styles.selected : ''}`}
+              onClick={() => handleWeatherClick('Windy')}
+            >
+              <img src={Windy} alt="Windy"/>
+              <span>Windy</span>
+            </div>
           </div>    
           <div className={styles.weatherIcons}>
-            <div className={styles.weatherIcon}><img src={Freeze} alt="Freeze"/><span>Cold</span></div>
-            <div className={styles.weatherIcon}><img src={Hot} alt="Hot"/><span>Hot</span></div>
+            <div 
+              className={`${styles.weatherIcon} ${selectedWeather.includes('Cold') ? styles.selected : ''}`}
+              onClick={() => handleWeatherClick('Cold')}
+            >
+              <img src={Freeze} alt="Freeze"/>
+              <span>Cold</span>
+            </div>
+            <div 
+              className={`${styles.weatherIcon} ${selectedWeather.includes('Hot') ? styles.selected : ''}`}
+              onClick={() => handleWeatherClick('Hot')}
+            >
+              <img src={Hot} alt="Hot"/>
+              <span>Hot</span>
+            </div>
           </div>
         </div> 
         <div className={styles.filterSection}>
           <div className={styles.filterLabel}>Season</div>
           <div className={styles.filterChips}>
-            <span className={styles.filterChip}>Summer</span>
-            <span className={styles.filterChip}>Fall</span>
-            <span className={styles.filterChip}>Winter</span>
-            <span className={styles.filterChip}>Spring</span>
+            <span 
+              className={`${styles.filterChip} ${selectedSeasons.includes('Summer') ? styles.selected : ''}`}
+              onClick={() => handleSeasonClick('Summer')}
+            >
+              Summer
+            </span>
+            <span 
+              className={`${styles.filterChip} ${selectedSeasons.includes('Fall') ? styles.selected : ''}`}
+              onClick={() => handleSeasonClick('Fall')}
+            >
+              Fall
+            </span>
+            <span 
+              className={`${styles.filterChip} ${selectedSeasons.includes('Winter') ? styles.selected : ''}`}
+              onClick={() => handleSeasonClick('Winter')}
+            >
+              Winter
+            </span>
+            <span 
+              className={`${styles.filterChip} ${selectedSeasons.includes('Spring') ? styles.selected : ''}`}
+              onClick={() => handleSeasonClick('Spring')}
+            >
+              Spring
+            </span>
           </div>
         </div>
         <div className={styles.filterSection}>
           <div className={styles.filterLabel}>Colour</div>
           <div className={styles.filterChips}>
-            <span className={styles.filterChip}>Black</span>
-            <span className={styles.filterChip}>White</span>
-            <span className={styles.filterChip}>Red</span>
-            <span className={styles.filterChip}>Orange</span>
-            <span className={styles.filterChip}>Yellow</span>
-            <span className={styles.filterChip}>Green</span>
-            <span className={styles.filterChip}>Blue</span>
-            <span className={styles.filterChip}>Purple</span>
-            <span className={styles.filterChip}>Brown</span>
+            <span 
+              className={`${styles.filterChip} ${selectedColors.includes('Black') ? styles.selected : ''}`}
+              onClick={() => handleColorClick('Black')}
+            >
+              Black
+            </span>
+            <span 
+              className={`${styles.filterChip} ${selectedColors.includes('White') ? styles.selected : ''}`}
+              onClick={() => handleColorClick('White')}
+            >
+              White
+            </span>
+            <span 
+              className={`${styles.filterChip} ${selectedColors.includes('Red') ? styles.selected : ''}`}
+              onClick={() => handleColorClick('Red')}
+            >
+              Red
+            </span>
+            <span 
+              className={`${styles.filterChip} ${selectedColors.includes('Orange') ? styles.selected : ''}`}
+              onClick={() => handleColorClick('Orange')}
+            >
+              Orange
+            </span>
+            <span 
+              className={`${styles.filterChip} ${selectedColors.includes('Yellow') ? styles.selected : ''}`}
+              onClick={() => handleColorClick('Yellow')}
+            >
+              Yellow
+            </span>
+            <span 
+              className={`${styles.filterChip} ${selectedColors.includes('Green') ? styles.selected : ''}`}
+              onClick={() => handleColorClick('Green')}
+            >
+              Green
+            </span>
+            <span 
+              className={`${styles.filterChip} ${selectedColors.includes('Blue') ? styles.selected : ''}`}
+              onClick={() => handleColorClick('Blue')}
+            >
+              Blue
+            </span>
+            <span 
+              className={`${styles.filterChip} ${selectedColors.includes('Purple') ? styles.selected : ''}`}
+              onClick={() => handleColorClick('Purple')}
+            >
+              Purple
+            </span>
+            <span 
+              className={`${styles.filterChip} ${selectedColors.includes('Brown') ? styles.selected : ''}`}
+              onClick={() => handleColorClick('Brown')}
+            >
+              Brown
+            </span>
           </div>
         </div>
         <div className={styles.filterSection}>
           <div className={styles.filterLabel}>Occasion</div>
           <div className={styles.filterChips}>
-            <span className={styles.filterChip}>Casual</span>
-            <span className={styles.filterChip}>Party</span>
-            <span className={styles.filterChip}>Formal</span>
-            <span className={styles.filterChip}>Business</span>
-            <span className={styles.filterChip}>Night Out</span>
+            <span 
+              className={`${styles.filterChip} ${selectedOccasions.includes('Casual') ? styles.selected : ''}`}
+              onClick={() => handleOccasionClick('Casual')}
+            >
+              Casual
+            </span>
+            <span 
+              className={`${styles.filterChip} ${selectedOccasions.includes('Party') ? styles.selected : ''}`}
+              onClick={() => handleOccasionClick('Party')}
+            >
+              Party
+            </span>
+            <span 
+              className={`${styles.filterChip} ${selectedOccasions.includes('Formal') ? styles.selected : ''}`}
+              onClick={() => handleOccasionClick('Formal')}
+            >
+              Formal
+            </span>
+            <span 
+              className={`${styles.filterChip} ${selectedOccasions.includes('Business') ? styles.selected : ''}`}
+              onClick={() => handleOccasionClick('Business')}
+            >
+              Business
+            </span>
+            <span 
+              className={`${styles.filterChip} ${selectedOccasions.includes('Night Out') ? styles.selected : ''}`}
+              onClick={() => handleOccasionClick('Night Out')}
+            >
+              Night Out
+            </span>
           </div>
         </div>
-        <button className={styles.applyFilterButton} onClick={onApply}>Apply Filter</button>
+        <button 
+          className={styles.applyFilterButton} 
+          onClick={() => onApply({
+            styles: selectedStyles,
+            weather: selectedWeather,
+            seasons: selectedSeasons,
+            colors: selectedColors,
+            occasions: selectedOccasions
+          })}
+        >
+          Apply Filter
+        </button>
       </div>
     </div>
   );

@@ -386,20 +386,25 @@ justify-content: center;
 }
 
 .filterChip {
-  border: 1.5px solid #BDBDBD;
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #F5F5F4;
+  border: 1px solid #3E3E3E;
   border-radius: 20px;
-  padding: 4px 14px;
   font-size: 14px;
-  color: #222;
-  background: #fff;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: all 0.2s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  color: #3E3E3E;
 }
 
 .filterChip.selected {
-  background: #364B3B;
-  color: #fff;
-  border-color: #364B3B;
+  background-color: #364B3B !important;
+  color: white !important;
+  border-color: #364B3B !important;
 }
 
 .weatherIcons {
@@ -412,15 +417,36 @@ justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 13px;
-  color: #888;
-  width: 48px;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  color: #3E3E3E;
+}
+
+.weatherIcon.selected {
+  background-color: #364B3B !important;
+  color: white !important;
+}
+
+.weatherIcon.selected img {
+  filter: brightness(0) invert(1) !important;
 }
 
 .weatherIcon img {
   width: 32px;
   height: 32px;
   margin-bottom: 2px;
+  pointer-events: none;
+}
+
+.weatherIcon span {
+  pointer-events: none;
 }
 
 .applyFilterButton {
