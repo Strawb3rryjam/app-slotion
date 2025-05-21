@@ -1,7 +1,7 @@
 .page {
     background: #f8f7f2;
-    min-height: 100vh;
-    /* font-family: 'Inter', sans-serif; */ /* Removed */
+    width: 393px;
+    height: 852px;
     padding: 0 0 32px 0;
   }
   
