@@ -3,6 +3,7 @@ import styles from '../css/HomePage.module.css';
 import { NotificationButton } from '../components/home_components/NotificationButton';
 import { FollowButton } from '../components/home_components/FollowButton';
 import profilePic_1 from '../assets/homeposts/profilePic_1.png';
+import { CollectionOverlay, Post } from '../components/home_components/Post';
 // import TopBar from '../components/home_components/TopBar';
 // return (
 //   <nav className={styles["nav-container"]}>
@@ -36,15 +37,16 @@ function Home() {
 
       <section className={styles.content_container}>
         {activeTab === 'Following' ? (
-          <div className={styles.post}>
-            <div className={styles.post_header}>
-              <img src={profilePic_1} alt="profile-pic" className={styles.profile_pic}/>
-              <p className={`${styles["secondary-text"]}`}>Mckayala13</p>
-              <FollowButton />
-            </div>
+          <div className={styles.post_container}>
+            <Post />
+
           </div>
         ) : (
-          <div>Community Content</div>
+          <div>
+          <div className={styles.collection_overlay_container}>
+            <CollectionOverlay />
+          </div>
+          </div>
         )}
       </section>
     </div>
