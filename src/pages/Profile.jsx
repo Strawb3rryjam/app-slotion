@@ -177,42 +177,56 @@ function LookbookPage() {
       id: 1,
       column: 1,
       imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/294f99533755d365f07f376237364aa1360daa66?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
-      name: "Summer Vibes",
-      outfitCount: 12
+      name: "All Outfits",
+      outfitCount: 74
     },
     {
       id: 2,
       column: 2,
       imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/8917e47cd905e1b67bcae4e44a74dccba8c99661?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
-      name: "Winter Collection",
-      outfitCount: 8
+      name: "Minimalistic",
+      outfitCount: 23
     },
     {
       id: 3,
       column: 1,
       imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/73c90c7bc17e79dee082cbc37357f9cd6dd5b39e?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
-      name: "Casual Days",
-      outfitCount: 15
+      name: "Summer",
+      outfitCount: 12
     },
     {
       id: 4,
       column: 2,
       imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/ab55b3e7a6c626e895e7f565e9f364f71d205f5a?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
-      name: "Formal Wear",
-      outfitCount: 6
+      name: "Chic",
+      outfitCount: 27
     },    {
       id: 5,
       column: 1,
       imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/ab55b3e7a6c626e895e7f565e9f364f71d205f5a?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
-      name: "Formal Wear",
-      outfitCount: 6
+      name: "Comfy",
+      outfitCount: 7
     },
     {
       id: 6,
       column: 2,
       imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/ab55b3e7a6c626e895e7f565e9f364f71d205f5a?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
-      name: "Formal Wear",
-      outfitCount: 6
+      name: "Y2K",
+      outfitCount: 18
+    },
+    {
+      id: 6,
+      column: 1,
+      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/ab55b3e7a6c626e895e7f565e9f364f71d205f5a?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
+      name: "Night Out",
+      outfitCount: 14
+    },
+    {
+      id: 6,
+      column: 2,
+      imageUrl: "https://cdn.builder.io/api/v1/image/assets/TEMP/ab55b3e7a6c626e895e7f565e9f364f71d205f5a?placeholderIfAbsent=true&apiKey=545f5df8aaa84ea8a5619648a044c178",
+      name: "Fall",
+      outfitCount: 21
     }
   ];
 
@@ -241,6 +255,12 @@ function LookbookPage() {
 }
 
 function SearchBar({ onFilterClick }) {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
   return (
     <div className={styles.searchBarContainer}>
       <div className={styles.searchBar}>
@@ -250,9 +270,13 @@ function SearchBar({ onFilterClick }) {
             className={styles.searchIcon}
             alt="Search icon"
           />
-          <span className={styles.searchText}>
-            Search
-          </span>
+          <input
+            type="text"
+            className={styles.searchInput}
+            placeholder="Search"
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
         </div>
       </div>
       <button 

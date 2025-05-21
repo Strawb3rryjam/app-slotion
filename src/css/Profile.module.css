@@ -216,6 +216,7 @@ justify-content: center;
   gap: 8px;
   align-items: center;
   height: 100%;
+  width: 100%;
 }
 
 .searchIcon {
@@ -224,6 +225,21 @@ justify-content: center;
   height: 32px;
   display: flex;
   align-items: center;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #3E3E3E;
+  padding: 0;
+  outline: none;
+  width: 100%;
+}
+
+.searchInput::placeholder {
+  color: #737373;
 }
 
 .searchText {
