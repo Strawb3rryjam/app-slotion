@@ -1,0 +1,206 @@
+.post_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.post_header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    margin-top: 20px;
+    position: relative;
+}
+
+.profile_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    position: relative;
+}
+
+.profile_pic {
+    width: 50px;
+    height: 50px;
+    left: 16px;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    margin-left: 10px;
+}
+
+.post_picture {
+    width: 393px;
+    height: 423px;
+    padding: 16px;
+    margin: 16px 0;
+}
+
+.content_container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* icon buttons */
+.like_button, .comment_button, .share_button, .save_button {
+    width: 43px;
+    height: 26px;
+}
+
+.icon_button_container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.comment_button_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* detail card */
+.detail_card_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--grey-400);
+}
+
+.detail_card_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 90%
+}
+
+.detail_card_title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 0 20px 0 0;
+    position: relative;
+    right: 10px;
+}
+
+
+.detail_card_content {
+    width: 357px;
+    height: 114px;
+    background-color: #E4E2DB;
+    border-radius: 10px;
+    margin: 16px 8px;
+    display: flex;
+
+}
+
+.detail_card_list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+span {
+    font-weight: 600;
+}
+    
+
+.content {
+    margin: 0 0 5px;
+}
+
+.meatballs_icon {
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+}
+
+.post_footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.icon_button_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.button_count {
+    font-size: 12px;
+    font-weight: 200;
+    color: black;
+    margin: 0;
+}
+
+.collection_overlay {
+    width: 393px;
+    height: 788px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* Overlay */
+.collection_overlay_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 80%;
+}
+
+.collection_card_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 0 auto;
+    flex-direction: row;
+}
+
+.collection_card {
+    display: flex;
+    flex-direction: column;
+    width: 172px;
+    height: 230px;
+    line-height: 10px;
+    margin: 0
+}
+
+.collection_name {
+    margin: 10px 10px 5px;
+}
+
+.collection_description {
+    margin: 10px;
+}
+
+
+
+
