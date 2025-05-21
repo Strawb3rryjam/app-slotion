@@ -1,15 +1,9 @@
 import { useState } from 'react';
 import styles from '../css/HomePage.module.css';
-import { NotificationButton } from '../components/home_components/NotificationButton';
-import { FollowButton } from '../components/home_components/FollowButton';
+import NotificationButton from '../components/home_components/NotificationButton.jsx';
+import FollowButton from '../components/home_components/FollowButton.jsx';
 import profilePic_1 from '../assets/homeposts/profilePic_1.png';
-import { CollectionOverlay, Post } from '../components/home_components/Post';
-// import TopBar from '../components/home_components/TopBar';
-// return (
-//   <nav className={styles["nav-container"]}>
-//     <TopBar />
-//   </nav>
-// );
+import { Post, CommunityPost } from '../components/home_components/Post.jsx';
 
 function Home() {
   const [activeTab, setActiveTab] = useState('Following');
@@ -35,19 +29,20 @@ function Home() {
         </div>
       </nav>
 
-      <section className={styles.content_container}>
-        {activeTab === 'Following' ? (
-          <div className={styles.post_container}>
-            <Post />
+      <section className={styles.content_section}>
 
+        {activeTab === 'Following' ? (
+          <div className={styles.section_following}>
+            <Post />
           </div>
+
         ) : (
-          <div>
-          <div className={styles.collection_overlay_container}>
-            <CollectionOverlay />
-          </div>
+
+          <div className={styles.section_community}>
+            <CommunityPost />
           </div>
         )}
+
       </section>
     </div>
   );

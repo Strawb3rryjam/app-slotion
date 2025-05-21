@@ -1,0 +1,169 @@
+.container {
+  background: #f8f7f2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px;
+  font-family: 'Inter', sans-serif;
+  align-items: center;   
+}
+
+.logo {
+  font-size: 48px;
+  font-weight: 700;
+  color: #3d5338;
+  margin-top: 40px;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 22px;
+  color: #3d5338;
+  font-weight: 500;
+  margin: 8px 0 32px 0;
+}
+
+.form {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 2px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #e4e2db;
+  font-size: 16px;
+  margin-bottom: 4px;
+  outline: none;
+}
+
+.passwordWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.eyeIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.forgot {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 8px;
+  margin-top: -4px;
+}
+
+.loginBtn {
+  width: 100%;
+  background: #3d5338;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 18px;
+  padding: 12px 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.loginBtn:hover {
+  background: #2c3b28;
+}
+
+.orDivider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  margin: 18px 0 10px 0;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: #bdbdbd;
+  border: none;
+}
+
+.orText {
+  margin: 0 12px;
+  color: #888;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.socials {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.socialBtn {
+  background: #bfc3bb;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.socialBtn img {
+  width: 32px;
+  height: 32px;
+}
+
+.socialBtn:hover {
+  background: #a0a49a;
+}
+
+.bottomLine {
+  width: 100%;
+  max-width: 350px;
+  margin: 18px 0 8px 0;
+  border: none;
+  border-top: 1px solid #bdbdbd;
+}
+
+.signup {
+  font-size: 15px;
+  color: #222;
+  margin-bottom: 24px;
+}
+
+.signupLink {
+  color: #3d5338;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 2px;
+}
+
+.signupLink:hover {
+  text-decoration: underline;
+}

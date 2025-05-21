@@ -13,6 +13,17 @@ function FollowButton() {
     
 };
 
+function UnfollowedButton() {
+    const [isFollowing, setIsFollowing] = useState(true);
+
+    return (
+        <button className={`${styles.follow_button} ${isFollowing ? styles.not_following : styles.following}`}
+            onClick={() => setIsFollowing(!isFollowing)}>
+            {isFollowing ? 'follow' : 'following'}
+        </button>
+    );
+    
+};
 
 
-export { FollowButton };
+export { FollowButton, UnfollowedButton };

@@ -9,4 +9,4 @@ function NotificationButton({ onClick }) {
     );
 };
 
-export { NotificationButton };
+export default NotificationButton;

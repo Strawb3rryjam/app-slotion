@@ -1,15 +1,21 @@
+.post {
+    padding-bottom: 100px;
+
+}
+
 .post_container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 393px;
 }
 
 .post_header {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 80%;
+    width: 100%;
     margin-top: 20px;
     position: relative;
 }
@@ -26,7 +32,7 @@
 .profile_pic {
     width: 50px;
     height: 50px;
-    left: 16px;
+    margin-left: 16px;
     margin-right: 10px;
 }
 
@@ -40,15 +46,59 @@
 .post_picture {
     width: 393px;
     height: 423px;
-    padding: 16px;
-    margin: 16px 0;
 }
 
-.content_container {
+
+/*Stylechips */
+
+.styleChips {
     display: flex;
-    align-items: center;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
+    width: 393px;
+    white-space: nowrap;
+    margin: 12px 0 12px 16px;
+    gap: 10px;
+    padding: 0 16px;
+  }
+
+  .styleChip {
+    padding: 4px 10px;
+    background-color: var(--green-base);
+    color: white;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 1;
+  }
+
+/* carousel */
+.carousel {
+    display: flex;
+    width: 393px;
+    height: 423px;
+    margin: 16px 0;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.outfit_card {
+    position: absolute;
+    width: 145px;
+    height: 146px;
+    margin: 16px;
+    right: 16px;
+    bottom: 16px;
+    z-index: 3;
+}
+
+.visible {
+    opacity: 1;
+}
+
+.invisible {
+    opacity: 0;
 }
 
 /* icon buttons */
@@ -60,17 +110,17 @@
 .icon_button_container {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    width: 100%;
+    justify-content: flex-start;
+    width: 393px;
+    gap: 16px;
 }
 
-.comment_button_container {
+.icon_button_container > :nth-child(4){
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    width: 100%;
 }
-
 
 /* detail card */
 .detail_card_container {
@@ -120,15 +170,25 @@ span {
     font-weight: 600;
 }
     
+/* content  */
+
+.content_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
 
 .content {
-    margin: 0 0 5px;
+    margin: 0 0 0 16px;
+    flex-direction: flex-start;
 }
 
 .meatballs_icon {
     width: 24px;
     height: 24px;
-    margin-left: auto;
+    flex-direction: flex-end;
+    margin: 0 16px 0 0;
 }
 
 .post_footer {
@@ -136,15 +196,10 @@ span {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
     margin-bottom: 20px;
 }
 
-.icon_button_container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
 
 .button_count {
     font-size: 12px;
@@ -153,6 +208,8 @@ span {
     margin: 0;
 }
 
+
+/* Overlay */
 .collection_overlay {
     width: 393px;
     height: 788px;
@@ -162,19 +219,12 @@ span {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    top: 64px;
+    z-index: 1000;
+
 }
 
-
-
-/* Overlay */
-.collection_overlay_header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 20px;
-    width: 80%;
-}
 
 .collection_card_container {
     display: grid;
@@ -182,6 +232,15 @@ span {
     gap: 10px;
     margin: 0 auto;
     flex-direction: row;
+}
+
+.collection_overlay_header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 80%;
 }
 
 .collection_card {
