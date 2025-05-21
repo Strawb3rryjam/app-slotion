@@ -107,6 +107,13 @@
   justify-content: center;
   width: 34px;
   height: 34px;
+  filter: brightness(0) saturate(100%) invert(48%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+  transition: filter 0.2s ease;
+}
+
+.navItem button[aria-label="Grid view"].active .navIcon,
+.navItem button[aria-label="List view"].active .navIcon {
+  filter: brightness(0) saturate(100%) invert(28%) sepia(15%) saturate(1012%) hue-rotate(107deg) brightness(94%) contrast(86%);
 }
 
 .activeIndicator {
@@ -161,4 +168,160 @@
   height: 172px;
   object-fit: cover;
   border-radius: 8px;
+}
+
+.lookbookPage {
+  min-height: 400px;
+  width: 393px;
+  display: flex;
+justify-content: center;
+  gap: 16px;
+  margin: 0 auto;
+}
+
+.lookbookContent {
+  width: 393px;
+  max-width: 361px;
+  margin: 0 auto;
+}
+
+.searchBarContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 361px;
+  margin: 22px 10px 0 auto;
+}
+
+.searchBar {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 10px;
+  width: 341px;
+  height: 22px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: 12px;
+  border: 1px solid #3E3E3E;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  background-color: #F5F5F4;
+  color: #737373;
+}
+
+.searchBarContent {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  height: 100%;
+}
+
+.searchIcon {
+  object-fit: contain;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.searchText {
+  display: flex;
+  align-items: center;
+  color: #737373;
+  width: 109px;
+  height: 100%;
+}
+
+.filterButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.filterIcon {
+  object-fit: contain;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.collectionGrid {
+  display: flex;
+  margin-top: 24px;
+  width: 100%;
+  gap: 16px;
+}
+
+.gridColumn {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 16px;
+}
+
+.collectionCard {
+  width: 172px;
+  height: 162px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #F5F5F4;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 0;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.collectionCard:hover {
+  opacity: 0.9;
+}
+
+.collectionImage {
+  width: 172px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.collectionInfo {
+  padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: 34px;
+  overflow: hidden;
+}
+
+.collectionName {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.outfitCount {
+  margin: 0;
+  font-size: 12px;
+  color: #737373;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 } 
