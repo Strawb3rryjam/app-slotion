@@ -1,43 +1,106 @@
-import { Link } from "react-router-dom";
-import styles from "../css/NavBar.module.css";  // Use this to import styles
+import { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-/*images*/
-import navBase from "../assets/NavBar.svg";
-import homeIcon from "../assets/Home.svg";
-import searchIcon from "../assets/Search.svg";
-import closetIcon from "../assets/Hanger.svg";
-import tipsIcon from "../assets/Leaf.svg";
-import profileIcon from "../assets/Profile.svg";
+import styles from '../css/NavBar.module.css';
 
-/*component*/
-import ClosetButton from "../components/closet_components/closetPageButton";
+import navBase from '../assets/NavBar.svg';
+import homeIcon from '../assets/Home.svg';
+import searchIcon from '../assets/search.svg';
+import leafIcon from '../assets/leaf.svg';
+import profileIcon from '../assets/profile.svg';
+import hangerIcon from '../assets/hanger.svg';
+
+export default function NavBar() {
+  const [showClosetMenu, setShowClosetMenu] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
 
-function NavBar() {
-    return (
-        <nav className={styles.navbar}> {/* Use styles.navbar for CSS modules */}
-            <div className={styles["navbar-links"]}> {/* Use styles for other classes */}
-                <Link to="/" className={styles.Home}>
-                    <img src={homeIcon} alt="Home" className={styles["nav-icon"]} />
-                </Link>
-                <Link to="/Search" className={styles.Search}>
-                    <img src={searchIcon} alt="Search" className={styles["nav-icon"]} />
-                </Link>
+  const hiddenRoutes = ['/login', '/onboarding'];
+  
+  if (hiddenRoutes.includes(location.pathname)) {
+    return null;
+  }
 
-                  <ClosetButton></ClosetButton>
+  const handleToggleMenu = () => {
+    console.log('Toggling menu:', !showClosetMenu); // Debug log
+    setShowClosetMenu((v) => !v);
+  };
 
-                <Link to="/Tips" className={styles.Tips}>
-                    <img src={tipsIcon} alt="Tips" className={styles["nav-icon"]} />
-                </Link>
-                <Link to="/Profile" className={styles.Profile}>
-                    <img src={profileIcon} alt="Profile" className={styles["nav-icon"]} />
-                </Link>
-
-              
-
+  return (
+    <>
+      {/* Overlay menu */}
+      {showClosetMenu && (
+        <>
+          <div className={styles.overlayBg} onClick={() => setShowClosetMenu(false)} />
+          <div className={styles.overlayMenu}>
+            <div className={styles.menuBox}>
+              <button 
+                className={styles.menuButton}
+                onClick={() => {
+                  navigate('/create-post'); // Navigate first
+                  setShowClosetMenu(false); // Then close the menu
+                }}
+              >
+                Create Post
+              </button>
+              <hr className={styles.menuDivider} />
+              <button 
+                className={styles.menuButton}
+                onClick={() => {
+                  navigate('/closet'); // Navigate first
+                  setShowClosetMenu(false); // Then close the menu
+                }}
+              >
+                View Closet
+              </button>
+              <div 
+                className={styles.menuHangerCircle}
+                onClick={() => setShowClosetMenu(false)}
+              >
+                <img src={hangerIcon} alt="Closet" className={styles.menuHangerIcon} />
+              </div>
             </div>
-        </nav>
-    );
-}
+          </div>
+        </>
+      )}
 
-export default NavBar;
+      {/* NavBar */}
+      <nav className={styles.navbar}>
+        <img src={navBase} alt="NavBar" className={styles.navBase} />
+        <button 
+          className={styles.navBtn}
+          onClick={() => navigate('/')}
+        >
+          <img src={homeIcon} alt="Home" />
+        </button>
+        <button 
+          className={styles.navBtn}
+          onClick={() => navigate('/search')}
+        >
+          <img src={searchIcon} alt="Search" />
+        </button>
+        <div className={styles.centerBtnWrapper}>
+          <button
+            className={styles.centerBtn}
+            onClick={() => setShowClosetMenu((v) => !v)}
+          >
+            <img src={hangerIcon} alt="Closet" />
+          </button>
+        </div>
+        <button 
+          className={styles.navBtn}
+          onClick={() => navigate('/tips')}
+        >
+          <img src={leafIcon} alt="Leaf" />
+        </button>
+        <button 
+          className={styles.navBtn}
+          onClick={() => navigate('/profile')}
+        >
+          <img src={profileIcon} alt="Profile" />
+        </button>
+      </nav>
+    </>
+  );
+}

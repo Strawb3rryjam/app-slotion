@@ -21,7 +21,8 @@ import Search from './pages/Search.jsx';
 import CreatePost from './components/closet_components/createPost.jsx';
 import ChooseOutfit from './components/closet_components/createPostChoose.jsx';
 import PostPreview from './components/closet_components/createPostPreview.jsx';
-
+import Notification from './pages/Notification.jsx';
+import Settings from './pages/Settings.jsx';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/tips" element={<Tips />} />
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/notification" element={<Notification />} />
 
           {/* Closet Page */}
           <Route path="/closet" element={<Closet />} />
@@ -46,6 +48,7 @@ function App() {
           <Route path="/add-photo" element={<AddPhotos />} />
 
           <Route path="/search" element={<Search />} />
+          <Route path="/settings" element={<Settings />} />
 
           <Route path="/create-post" element={<CreatePost/>}/>
         <Route path="/choose-outfit" element={<ChooseOutfit />} />

@@ -1,14 +1,16 @@
 .page {
   background: #f8f7f2;
-  min-height: 100vh;
-  font-family: 'Inter', sans-serif;
+  height: 852px;
   padding-bottom: 32px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  line-height: 16px;
 }
 
 .header {
   display: flex;
   align-items: center;
-  padding: 24px 16px 8px 16px;
+  justify-content: center;
   background: #f8f7f2;
   position: sticky;
   top: 0;
@@ -25,7 +27,6 @@
 
 .title {
   font-size: 24px;
-  font-weight: 700;
   margin: 0;
 }
 
@@ -73,7 +74,6 @@
   border-radius: 8px;
   padding: 6px 18px;
   font-size: 15px;
-  font-weight: 500;
   border: none;
   margin-left: 12px;
   cursor: pointer;
