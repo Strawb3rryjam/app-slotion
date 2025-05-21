@@ -1,59 +1,142 @@
 .navbar {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-
-  padding: 19px 32px 33px 32px;
-
+  width: 393px;
   display: flex;
-  justify-content: center;
-
-  background-image: url(../assets/NavBar.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-
-  width: 329px;
-  max-height: 84px;
-  z-index: 1000;
-}
-  
-
-.navbar-links {
-  display: flex;
-  justify-content: space-around; /* Space items evenly */
-  align-items: center; /* Align all items centrally */
-  width: 100%;
-}
- 
-  /*icons*/
-  .Home {
-    width: 28.444px;
-    height: 32px;
-  }
-
-  .Search{
-    width: 31px;
-    height: 31px;
-  }
-
-  .Tips{
-    width: 32px;
-    height: 32px;
-  }
-
-.Profile{
-  width: 32px;
-  height: 32px;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  z-index: 100;
 }
 
-.Closet {
-  width: 62.2px;
-  height: 62.2px;
-  background-color: white;
-  border-radius: 50%; /* makes it a perfect circle */
+.navBase {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 393px;
+  height: 84px;
+  z-index: -50;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+}
+
+.navBtn {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0 8px;
+  height: 44px;
+  width: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+}
+
+.centerBtnWrapper {
+  position: relative;
+  top: -24px;
+  z-index: 11;
+}
+
+.centerBtn {
+  background: #fff;
+  border-radius: 50%;
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+  cursor: pointer;
+  z-index: 12;
+  position: relative;
+  margin: 0 0 10px 0;
+}
+
+.centerBtn img {
+  width: 36px;
+  height: 36px;
+}
+
+.overlayMenu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+}
+
+.menuBox {
+  background: var(--green-base);
+  border-radius: 10px;
+  width: 361px;
+  height: 126px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  z-index: 100;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 0;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuDivider {
+  width: 80%;
+  border: none;
+  border-top: 1px solid #fff;
+  margin: 0;
+}
+
+.menuHangerCircle {
+  position: absolute;
+  left: 50%;
+  bottom: -38px;
+  transform: translateX(-50%);
+  background: var(--green-base);
+  border-radius: 50%;
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 101;
+}
+
+.menuHangerIcon {
+  width: 36px;
+  height: 36px;
+  filter: brightness(0) invert(1);
+}
+
+.overlayBg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+}
+
+.centerBtnWrapper button {
+  position: relative;
+  z-index: 1002;
 }

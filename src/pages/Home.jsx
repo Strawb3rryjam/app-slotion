@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from '../css/HomePage.module.css';
 import NotificationButton from '../components/home_components/NotificationButton.jsx';
 import { FollowButton, UnfollowedButton } from '../components/home_components/FollowButton.jsx';
@@ -6,13 +7,16 @@ import profilePic_1 from '../assets/homeposts/profilePic_1.png';
 import { Post, CommunityPost } from '../components/home_components/Post.jsx';
 
 function Home() {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('Following');
 
   return (
     <div className={`${styles.home_container}`}>
       <nav className={`${styles.nav_container}`}>
         <div className={`${styles.notification_button}`}>
-          <NotificationButton />
+          <NotificationButton 
+            onClick={() => navigate('/Notification')}
+          />
         </div>
         
         <div className={`${styles.navTab}`}>
