@@ -839,17 +839,181 @@ color: var(--grey-base);
 
 
 
+/*card component*/
+
+.cardLabelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardLabel {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.addItemIcon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+
+
+/*Add new item form*/
+
+
+.formWrapper {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  color: #007aff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.addButton {
+  padding: 0.5rem 1rem;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.addButton.disabled {
+  background-color: #d1d1d1;
+  color: #777;
+  cursor: not-allowed;
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.tagSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tagChip {
+  background-color: #eee;
+  padding: 0.4rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.removeTag {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.noteBox {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  min-height: 80px;
+  resize: vertical;
+}
+
+
+.imagePreviewWrapper {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.imagePreview {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
 
 
 
 
 
+.itemDetails {
+  padding: 1rem;
+  font-family: 'Arial, sans-serif';
+}
 
+.itemName {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
 
+.noteSection {
+  margin-top: 1rem;
+  font-style: italic;
+  white-space: pre-wrap;
+}
 
+.createOutfitButton {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.3s ease;
+}
 
-
-
+.createOutfitButton:hover {
+  background-color: #45a049;
+}
 
 
 
