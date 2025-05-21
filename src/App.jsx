@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Closet from './pages/Closet';
 import Profile from './pages/Profile';
+import Tips from './pages/Tips';
 import CreateOutfit from './pages/CreateOutfit.jsx';
 import Onboarding from './pages/Onboarding.jsx';
 import Login from './pages/Login.jsx';
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/tips" element={<Tips />} />
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/login" element={<Login />} />
 
